@@ -1,6 +1,6 @@
 ﻿namespace CRS_BUSINESS
 {
-    public class Class1
+    public class AdminBLL
     {
 
     }

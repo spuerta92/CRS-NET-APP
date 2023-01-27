@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CRS-DTOS\CRS-DTOS.csproj" />
     <ProjectReference Include="..\CRS-MODELS\CRS-MODELS.csproj" />
   </ItemGroup>

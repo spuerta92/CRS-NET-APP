@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "e3/SU5FXKQb33tpyHkNO9v5TQsg0IPFUNKVLca2GiX4AKdzrD/eMdXcPBANmRlyR4DuADSSMH9hfaBOtlyJXmQ==",
+  "dgSpecHash": "rOTK6AdpU+ZB3z6NOUKvHU0nC8W4ZYY5pOokzNbK+m5VPN74D9nLqAElUcAWGhcQrPmO0DYMNKvxqcq/3ay4TQ==",
   "success": true,
   "projectFilePath": "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-COMMON\\CRS-COMMON.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\spuerta000\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

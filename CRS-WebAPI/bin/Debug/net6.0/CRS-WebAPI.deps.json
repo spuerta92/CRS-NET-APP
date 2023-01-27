@@ -8,7 +8,10 @@
     ".NETCoreApp,Version=v6.0": {
       "CRS-WebAPI/1.0.0": {
         "dependencies": {
+          "CRS-BUSINESS": "1.0.0",
+          "CRS-COMMON": "1.0.0",
           "CRS-DAO": "1.0.0",
+          "CRS-DTOS": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.17.0",
@@ -878,6 +881,24 @@
           }
         }
       },
+      "CRS-BUSINESS/1.0.0": {
+        "dependencies": {
+          "CRS-DAO": "1.0.0"
+        },
+        "runtime": {
+          "CRS-BUSINESS.dll": {}
+        }
+      },
+      "CRS-COMMON/1.0.0": {
+        "dependencies": {
+          "CRS-DTOS": "1.0.0",
+          "CRS-MODELS": "1.0.0",
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "runtime": {
+          "CRS-COMMON.dll": {}
+        }
+      },
       "CRS-DAO/1.0.0": {
         "dependencies": {
           "CRS-MODELS": "1.0.0",
@@ -889,6 +910,11 @@
         },
         "runtime": {
           "CRS-DAO.dll": {}
+        }
+      },
+      "CRS-DTOS/1.0.0": {
+        "runtime": {
+          "CRS-DTOS.dll": {}
         }
       },
       "CRS-MODELS/1.0.0": {
@@ -1506,7 +1532,22 @@
       "path": "zstdsharp.port/0.6.2",
       "hashPath": "zstdsharp.port.0.6.2.nupkg.sha512"
     },
+    "CRS-BUSINESS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRS-COMMON/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "CRS-DAO/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRS-DTOS/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

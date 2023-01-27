@@ -10,11 +10,12 @@ namespace CRS_DAO
     public interface ICrsRepository 
     {
         // users
-        public User AddUser(User user);
+        public Users AddUser(Users user);
         public void DeleteUser(int userId);
-        public User UpdateUser(User user);
-        public User? GetUser(int userId);
-        public IEnumerable<User> GetUsers();
+        public Users UpdateUser(Users user);
+        public Users? GetUser(int userId);
+        public Users? GetUser(string userName, string password, int roleId);
+        public IEnumerable<Users> GetUsers();
 
         // students
         public Student AddStudent(Student student);

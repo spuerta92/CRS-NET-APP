@@ -1,3 +1,8 @@
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.csproj.AssemblyReference.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.GeneratedMSBuildEditorConfig.editorconfig
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.AssemblyInfoInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.AssemblyInfo.cs
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.csproj.CoreCompileInputs.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\bin\Debug\net6.0\CRS-COMMON.deps.json
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\bin\Debug\net6.0\CRS-COMMON.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\bin\Debug\net6.0\CRS-COMMON.pdb
@@ -5,11 +10,6 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\bin\Debug\net6.0\CRS-DTOS.
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\bin\Debug\net6.0\CRS-MODELS.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\bin\Debug\net6.0\CRS-DTOS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\bin\Debug\net6.0\CRS-MODELS.pdb
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.csproj.AssemblyReference.cache
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.GeneratedMSBuildEditorConfig.editorconfig
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.AssemblyInfoInputs.cache
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.AssemblyInfo.cs
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.csproj.CoreCompileInputs.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.csproj.CopyComplete
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\CRS-COMMON.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-COMMON\obj\Debug\net6.0\refint\CRS-COMMON.dll

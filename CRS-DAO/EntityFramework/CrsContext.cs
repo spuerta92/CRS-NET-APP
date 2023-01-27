@@ -12,7 +12,7 @@ namespace CRS_DAO.EntityFramework
     {
         public CrsContext(DbContextOptions<CrsContext> options) : base(options) { }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<Users> Users { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Professor> Professors { get; set; }
         public DbSet<Admin> Admin { get; set; }

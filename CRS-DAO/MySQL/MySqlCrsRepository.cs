@@ -111,7 +111,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public User AddUser(User user)
+        public Users AddUser(Users user)
         {
             throw new NotImplementedException();
         }
@@ -301,12 +301,17 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public User GetUser(int userId)
+        public Users GetUser(int userId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<User> GetUsers()
+        public Users? GetUser(string userName, string password, int roleId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Users> GetUsers()
         {
             throw new NotImplementedException();
         }
@@ -371,7 +376,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public User UpdateUser(User user)
+        public Users UpdateUser(Users user)
         {
             throw new NotImplementedException();
         }

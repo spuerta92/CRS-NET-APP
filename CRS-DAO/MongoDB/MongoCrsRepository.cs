@@ -18,12 +18,12 @@ namespace CRS_DAO.MongoDB
         private const string professorsCollectionName = "Professors";
         private const string adminCollectionName = "Admin";
 
-        private readonly IMongoCollection<User> usersCollection;
+        private readonly IMongoCollection<Users> usersCollection;
         private readonly IMongoCollection<Student> studentsCollection;
         private readonly IMongoCollection<Professor> professorsCollection;
         private readonly IMongoCollection<Admin> adminCollection;
 
-        private readonly FilterDefinitionBuilder<User> userFilterBuilder = Builders<User>.Filter;
+        private readonly FilterDefinitionBuilder<Users> userFilterBuilder = Builders<Users>.Filter;
         private readonly FilterDefinitionBuilder<Student> studentFilterBuilder = Builders<Student>.Filter;
         private readonly FilterDefinitionBuilder<Professor> professorFilterBuilder = Builders<Professor>.Filter;
         private readonly FilterDefinitionBuilder<Admin> adminFilterBuilder = Builders<Admin>.Filter;
@@ -32,7 +32,7 @@ namespace CRS_DAO.MongoDB
         {
             IMongoDatabase database = mongoClient.GetDatabase(databaseName);
 
-            usersCollection = database.GetCollection<User>(usersCollectionName);
+            usersCollection = database.GetCollection<Users>(usersCollectionName);
             studentsCollection = database.GetCollection<Student>(studentsCollectionName);
             professorsCollection = database.GetCollection<Professor>(professorsCollectionName);
             adminCollection = database.GetCollection<Admin>(adminCollectionName);
@@ -104,7 +104,7 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
-        public User AddUser(User user)
+        public Users AddUser(Users user)
         {
             throw new NotImplementedException();
         }
@@ -296,12 +296,17 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
-        public User GetUser(int userId)
+        public Users GetUser(int userId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<User> GetUsers()
+        public Users? GetUser(string userName, string password, int roleId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Users> GetUsers()
         {
             throw new NotImplementedException();
         }
@@ -370,7 +375,7 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
-        public User UpdateUser(User user)
+        public Users UpdateUser(Users user)
         {
             throw new NotImplementedException();
         }

@@ -9,6 +9,21 @@ namespace CRS_MODELS
 {
     public class CourseCatalog
     {
+        public CourseCatalog(int courseCatalogId, int courseId, int professorId, int departmentId, string prerequisite, int credits, int capacity, int enrolled, string semester, string uUID, DateTime createDateTime)
+        {
+            CourseCatalogId = courseCatalogId;
+            CourseId = courseId;
+            ProfessorId = professorId;
+            DepartmentId = departmentId;
+            Prerequisite = prerequisite;
+            Credits = credits;
+            Capacity = capacity;
+            Enrolled = enrolled;
+            Semester = semester;
+            UUID = uUID;
+            CreateDateTime = createDateTime;
+        }
+
         [Key]
         public int CourseCatalogId { get; set; }
         public int CourseId { get; set; }
@@ -21,30 +36,5 @@ namespace CRS_MODELS
         public string Semester { get; set; }
         public string UUID { get; set; }
         public DateTime CreateDateTime { get; set; }
-
-        public CourseCatalog(int courseCatalogId,
-                             int courseId,
-                             int professorId,
-                             int departmentId,
-                             string prerequisite,
-                             int credits,
-                             int capacity,
-                             int enrolled,
-                             string semester,
-                             string uuid,
-                             DateTime createDateTime)
-        {
-            CourseCatalogId = courseCatalogId;
-            CourseId = courseId;
-            ProfessorId = professorId;
-            DepartmentId = departmentId;
-            Prerequisite = prerequisite;
-            Credits = credits;
-            Capacity = capacity;
-            Enrolled = enrolled;
-            Semester = semester;
-            UUID = uuid;
-            CreateDateTime = createDateTime;
-        }
     }
 }

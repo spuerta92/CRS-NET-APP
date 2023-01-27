@@ -1,4 +1,6 @@
 ﻿using CRS_DTOS.AdminDtos;
+using CRS_DTOS.CourseDtos;
+using CRS_DTOS.PaymentDtos;
 using CRS_DTOS.ProfessorDtos;
 using CRS_DTOS.StudentDtos;
 using CRS_DTOS.UserDtos;
@@ -50,7 +52,7 @@ namespace CRS_COMMON
             };
         }
 
-        public static UserDto AsDto(this User user)
+        public static UserDto AsDto(this Users user)
         {
             return new UserDto()
             {
@@ -60,6 +62,34 @@ namespace CRS_COMMON
                 RoleId = user.RoleId,
                 UUID = user.UUID,
                 CreateDateTime = user.CreateDateTime
+            };
+        }
+
+        public static CourseDto AsDto(this Course course)
+        {
+            return new CourseDto()
+            {
+                CourseId = course.CourseId,
+                CourseName = course.CourseName,
+                Description = course.Description,
+                UUID = course.UUID,
+                CreateDateTime = course.CreateDateTime
+            };
+        }
+
+        public static PaymentDto AsDto(this Payment payment)
+        {
+            return new PaymentDto()
+            {
+                PaymentId = payment.PaymentId,
+                PaymentName = payment.PaymentName,
+                StudentId = payment.StudentId,
+                DueDate = payment.DueDate,
+                Semester = payment.Semester,
+                PaymentMethodId = payment.PaymentMethodId,
+                IsPaid = payment.IsPaid,
+                UUID = payment.UUID,
+                CreateDateTime = payment.CreateDateTime
             };
         }
     }

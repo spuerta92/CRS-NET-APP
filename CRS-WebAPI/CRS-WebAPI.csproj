@@ -33,7 +33,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CRS-BUSINESS\CRS-BUSINESS.csproj" />
+    <ProjectReference Include="..\CRS-COMMON\CRS-COMMON.csproj" />
     <ProjectReference Include="..\CRS-DAO\CRS-DAO.csproj" />
+    <ProjectReference Include="..\CRS-DTOS\CRS-DTOS.csproj" />
   </ItemGroup>
 
 </Project>

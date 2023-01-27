@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CRS-DAO\CRS-DAO.csproj" />
+  </ItemGroup>
+
 </Project>

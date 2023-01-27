@@ -257,7 +257,7 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
-        public User AddUser(User user)
+        public Users AddUser(Users user)
         {
             try
             {
@@ -631,12 +631,17 @@ namespace CRS_DAO.EntityFramework
             return db.Students;
         }
 
-        public User? GetUser(int userId)
+        public Users? GetUser(int userId)
         {
             return db.Users.Where(x => x.UserId == userId).SingleOrDefault();
         }
 
-        public IEnumerable<User> GetUsers()
+        public Users? GetUser(string userName, string password, int roleId)
+        {
+            return db.Users.Where(x => x.UserName == userName && x.Password == password && x.RoleId == roleId).SingleOrDefault();
+        }
+
+        public IEnumerable<Users> GetUsers()
         {
             return db.Users;
         }
@@ -833,12 +838,12 @@ namespace CRS_DAO.EntityFramework
             return db.Students.Where(x => x.StudentId == student.StudentId).SingleOrDefault();
         }
 
-        public User UpdateUser(User user)
+        public Users UpdateUser(Users user)
         {
             try
             {
                 var existingUser = db.Users.Where(x => x.UserId == user.UserId).SingleOrDefault();
-                db.Entry<User>(existingUser).CurrentValues.SetValues(user);
+                db.Entry<Users>(existingUser).CurrentValues.SetValues(user);
                 db.SaveChanges();
             }
             catch (SqlException ex)

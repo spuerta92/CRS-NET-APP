@@ -1432,6 +1432,34 @@
           "lib/net6.0/ZstdSharp.dll": {}
         }
       },
+      "CRS-BUSINESS/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CRS-DAO": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CRS-BUSINESS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRS-BUSINESS.dll": {}
+        }
+      },
+      "CRS-COMMON/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "CRS-DTOS": "1.0.0",
+          "CRS-MODELS": "1.0.0",
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "compile": {
+          "bin/placeholder/CRS-COMMON.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRS-COMMON.dll": {}
+        }
+      },
       "CRS-DAO/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -1448,6 +1476,16 @@
         },
         "runtime": {
           "bin/placeholder/CRS-DAO.dll": {}
+        }
+      },
+      "CRS-DTOS/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CRS-DTOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRS-DTOS.dll": {}
         }
       },
       "CRS-MODELS/1.0.0": {
@@ -4228,10 +4266,25 @@
         "zstdsharp.port.nuspec"
       ]
     },
+    "CRS-BUSINESS/1.0.0": {
+      "type": "project",
+      "path": "../CRS-BUSINESS/CRS-BUSINESS.csproj",
+      "msbuildProject": "../CRS-BUSINESS/CRS-BUSINESS.csproj"
+    },
+    "CRS-COMMON/1.0.0": {
+      "type": "project",
+      "path": "../CRS-COMMON/CRS-COMMON.csproj",
+      "msbuildProject": "../CRS-COMMON/CRS-COMMON.csproj"
+    },
     "CRS-DAO/1.0.0": {
       "type": "project",
       "path": "../CRS-DAO/CRS-DAO.csproj",
       "msbuildProject": "../CRS-DAO/CRS-DAO.csproj"
+    },
+    "CRS-DTOS/1.0.0": {
+      "type": "project",
+      "path": "../CRS-DTOS/CRS-DTOS.csproj",
+      "msbuildProject": "../CRS-DTOS/CRS-DTOS.csproj"
     },
     "CRS-MODELS/1.0.0": {
       "type": "project",
@@ -4241,7 +4294,10 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CRS-BUSINESS >= 1.0.0",
+      "CRS-COMMON >= 1.0.0",
       "CRS-DAO >= 1.0.0",
+      "CRS-DTOS >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.2",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.17.0",
@@ -4284,8 +4340,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-BUSINESS\\CRS-BUSINESS.csproj": {
+              "projectPath": "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-BUSINESS\\CRS-BUSINESS.csproj"
+            },
+            "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-COMMON\\CRS-COMMON.csproj": {
+              "projectPath": "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-COMMON\\CRS-COMMON.csproj"
+            },
             "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-DAO\\CRS-DAO.csproj": {
               "projectPath": "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-DAO\\CRS-DAO.csproj"
+            },
+            "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-DTOS\\CRS-DTOS.csproj": {
+              "projectPath": "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-DTOS\\CRS-DTOS.csproj"
             }
           }
         }
