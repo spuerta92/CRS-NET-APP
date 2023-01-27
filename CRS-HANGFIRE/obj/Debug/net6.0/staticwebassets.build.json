@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mSD4dYidVVKKUOhA4i8TQ+b6JkOu9C2yGT03CZpymrk=",
+  "Source": "CRS-HANGFIRE",
+  "BasePath": "_content/CRS-HANGFIRE",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

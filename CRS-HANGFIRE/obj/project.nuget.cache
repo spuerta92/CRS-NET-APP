@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "B/m3hd29nIJ1g1HEJBoMCmDcgswu1PTxe0e61ebAX3ozjegleVGkBr0oYU3HF6aNooKeve0ynI/ECfd9r3ALpA==",
+  "success": true,
+  "projectFilePath": "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-HANGFIRE\\CRS-HANGFIRE.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\spuerta000\\.nuget\\packages\\hangfire\\1.7.32\\hangfire.1.7.32.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\hangfire.aspnetcore\\1.7.32\\hangfire.aspnetcore.1.7.32.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\hangfire.core\\1.7.32\\hangfire.core.1.7.32.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\hangfire.sqlserver\\1.7.32\\hangfire.sqlserver.1.7.32.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\microsoft.win32.registry\\4.4.0\\microsoft.win32.registry.4.4.0.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\newtonsoft.json\\11.0.1\\newtonsoft.json.11.0.1.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\system.data.sqlclient\\4.4.0\\system.data.sqlclient.4.4.0.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\system.security.accesscontrol\\4.4.0\\system.security.accesscontrol.4.4.0.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\system.security.principal.windows\\4.4.0\\system.security.principal.windows.4.4.0.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\system.text.encoding.codepages\\4.4.0\\system.text.encoding.codepages.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}

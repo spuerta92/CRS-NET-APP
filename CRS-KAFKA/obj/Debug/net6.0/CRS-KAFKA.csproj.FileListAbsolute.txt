@@ -1,0 +1,12 @@
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\bin\Debug\net6.0\CRS-KAFKA.deps.json
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\bin\Debug\net6.0\CRS-KAFKA.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\bin\Debug\net6.0\CRS-KAFKA.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\obj\Debug\net6.0\CRS-KAFKA.csproj.AssemblyReference.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\obj\Debug\net6.0\CRS-KAFKA.GeneratedMSBuildEditorConfig.editorconfig
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\obj\Debug\net6.0\CRS-KAFKA.AssemblyInfoInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\obj\Debug\net6.0\CRS-KAFKA.AssemblyInfo.cs
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\obj\Debug\net6.0\CRS-KAFKA.csproj.CoreCompileInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\obj\Debug\net6.0\CRS-KAFKA.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\obj\Debug\net6.0\refint\CRS-KAFKA.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\obj\Debug\net6.0\CRS-KAFKA.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-KAFKA\obj\Debug\net6.0\ref\CRS-KAFKA.dll

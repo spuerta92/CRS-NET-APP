@@ -1,0 +1,12 @@
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\bin\Debug\net6.0\CRS-DTOS.deps.json
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\bin\Debug\net6.0\CRS-DTOS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\bin\Debug\net6.0\CRS-DTOS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\obj\Debug\net6.0\CRS-DTOS.csproj.AssemblyReference.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\obj\Debug\net6.0\CRS-DTOS.GeneratedMSBuildEditorConfig.editorconfig
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\obj\Debug\net6.0\CRS-DTOS.AssemblyInfoInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\obj\Debug\net6.0\CRS-DTOS.AssemblyInfo.cs
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\obj\Debug\net6.0\CRS-DTOS.csproj.CoreCompileInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\obj\Debug\net6.0\CRS-DTOS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\obj\Debug\net6.0\refint\CRS-DTOS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\obj\Debug\net6.0\CRS-DTOS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-DTOS\obj\Debug\net6.0\ref\CRS-DTOS.dll

@@ -1,0 +1,12 @@
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\bin\Debug\net6.0\CRS-AWS.deps.json
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\bin\Debug\net6.0\CRS-AWS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\bin\Debug\net6.0\CRS-AWS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\obj\Debug\net6.0\CRS-AWS.csproj.AssemblyReference.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\obj\Debug\net6.0\CRS-AWS.GeneratedMSBuildEditorConfig.editorconfig
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\obj\Debug\net6.0\CRS-AWS.AssemblyInfoInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\obj\Debug\net6.0\CRS-AWS.AssemblyInfo.cs
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\obj\Debug\net6.0\CRS-AWS.csproj.CoreCompileInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\obj\Debug\net6.0\CRS-AWS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\obj\Debug\net6.0\refint\CRS-AWS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\obj\Debug\net6.0\CRS-AWS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-AWS\obj\Debug\net6.0\ref\CRS-AWS.dll

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>CRS_COMMON</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CRS-DTOS\CRS-DTOS.csproj" />
+    <ProjectReference Include="..\CRS-MODELS\CRS-MODELS.csproj" />
+  </ItemGroup>
+
+</Project>

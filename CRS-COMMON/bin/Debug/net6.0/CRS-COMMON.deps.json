@@ -1,0 +1,47 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "CRS-COMMON/1.0.0": {
+        "dependencies": {
+          "CRS-DTOS": "1.0.0",
+          "CRS-MODELS": "1.0.0"
+        },
+        "runtime": {
+          "CRS-COMMON.dll": {}
+        }
+      },
+      "CRS-DTOS/1.0.0": {
+        "runtime": {
+          "CRS-DTOS.dll": {}
+        }
+      },
+      "CRS-MODELS/1.0.0": {
+        "runtime": {
+          "CRS-MODELS.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CRS-COMMON/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRS-DTOS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRS-MODELS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
