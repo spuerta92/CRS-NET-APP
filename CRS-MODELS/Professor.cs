@@ -19,18 +19,5 @@ namespace CRS_MODELS
         public int UserId { get; set; }
         public string UUID { get; set; }
         public DateTime CreateDateTime { get; set; }
-
-        public Professor(int professorId, string professorName, string departmentId, string email, string phone, string address, int userId, string uUID, DateTime createDateTime)
-        {
-            ProfessorId = professorId;
-            ProfessorName = professorName;
-            DepartmentId = departmentId;
-            Email = email;
-            Phone = phone;
-            Address = address;
-            UserId = userId;
-            UUID = uUID;
-            CreateDateTime = createDateTime;
-        }
     }
 }

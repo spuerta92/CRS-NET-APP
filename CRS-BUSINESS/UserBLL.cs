@@ -20,15 +20,36 @@ namespace CRS_BUSINESS
         public IEnumerable<Users> GetUsers()
         {
             var users = repository.GetUsers();
-
             return users;
         }
 
         public Users GetUser(string userName, string password, int roleId)
         {
             var users = repository.GetUser(userName, password, roleId);
-
             return users;
+        }
+
+        public Users GetUser(int userId)
+        {
+            var user = repository.GetUser(userId);
+            return user;
+        }
+
+        public Users AddUser(Users user)
+        {
+            var newUser = repository.AddUser(user);
+            return newUser;
+        }
+
+        public Users UpdateUser(Users user)
+        {
+            var existingUser = repository.UpdateUser(user);
+            return existingUser;
+        }
+
+        public void DeleteUser(int userId)
+        {
+            repository.DeleteUser(userId);
         }
     }
 }

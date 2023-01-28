@@ -12,9 +12,11 @@ namespace CRS_DAO.EntityFramework
     public class EFCrsRepository : ICrsRepository
     {
         private readonly CrsContext db;
+        private readonly Logger log;
         public EFCrsRepository(CrsContext db)
         {
             this.db = db;
+            log = new Logger();
         }
 
         public Admin AddAdmin(Admin admin)
@@ -26,10 +28,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch(SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch(Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -46,10 +50,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -66,10 +72,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -86,15 +94,51 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                log.DbError(ex);
+                throw;
+            }
+
+            var result = db.Departments.Where(x => x.DepartmentId == deparment.DepartmentId).SingleOrDefault();
+            return result;
+        }
+
+        public void AddErrorLog(ApiErrorLog log)
+        {
+            try
+            {
+                db.Add(log);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
                 throw;
             }
+        }
 
-            var result = db.Departments.Where(x => x.DepartmentId == deparment.DepartmentId).SingleOrDefault();
-            return result;
+        public void AddErrorLog(DbErrorLog log)
+        {
+            try
+            {
+                db.Add(log);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public Major AddMajor(Major major)
@@ -106,10 +150,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -126,10 +172,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -146,10 +194,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -166,10 +216,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -186,10 +238,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -206,10 +260,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -226,10 +282,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -246,10 +304,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -266,10 +326,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
 
@@ -287,10 +349,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -305,10 +369,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -323,10 +389,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -341,10 +409,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -359,10 +429,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -377,10 +449,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -395,10 +469,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -413,10 +489,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -431,10 +509,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -449,10 +529,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -467,10 +549,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -485,10 +569,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -503,10 +589,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                log.DbError(ex);
                 throw;
             }
         }
@@ -656,6 +744,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch(SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message); 
             }
 
@@ -672,6 +761,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -688,6 +778,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -704,6 +795,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -720,6 +812,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -736,6 +829,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -752,6 +846,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -768,6 +863,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -784,6 +880,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -800,6 +897,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -816,6 +914,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -826,12 +925,13 @@ namespace CRS_DAO.EntityFramework
         {
             try
             {
-                var existingStudent = db.Students.Where(x => x.StudentId == student.StudentId).SingleOrDefault();
+                var existingStudent = db.Students.SingleOrDefault(x => x.StudentId == student.StudentId);
                 db.Entry<Student>(existingStudent).CurrentValues.SetValues(student);
                 db.SaveChanges();
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 
@@ -842,12 +942,13 @@ namespace CRS_DAO.EntityFramework
         {
             try
             {
-                var existingUser = db.Users.Where(x => x.UserId == user.UserId).SingleOrDefault();
+                var existingUser = db.Users.SingleOrDefault(x => x.UserId == user.UserId);
                 db.Entry<Users>(existingUser).CurrentValues.SetValues(user);
                 db.SaveChanges();
             }
             catch (SqlException ex)
             {
+                log.DbError(ex);
                 throw new Exception(ex.Message);
             }
 

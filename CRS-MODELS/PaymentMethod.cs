@@ -15,14 +15,5 @@ namespace CRS_MODELS
         public string Description { get; set; }
         public string UUID { get; set; }
         public DateTime CreateDateTime { get; set; }
-
-        public PaymentMethod(int paymentMethodId, string paymentMethodName, string description, string uUID, DateTime createDateTime)
-        {
-            PaymentMethodId = paymentMethodId;
-            PaymentMethodName = paymentMethodName;
-            Description = description;
-            UUID = uUID;
-            CreateDateTime = createDateTime;
-        }
     }
 }

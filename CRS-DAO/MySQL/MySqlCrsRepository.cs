@@ -291,6 +291,16 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
+        public void AddErrorLog(ApiErrorLog log)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddErrorLog(DbErrorLog log)
+        {
+            throw new NotImplementedException();
+        }
+
         public Student GetStudent(int studentId)
         {
             throw new NotImplementedException();

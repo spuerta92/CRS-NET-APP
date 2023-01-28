@@ -101,5 +101,8 @@ namespace CRS_DAO
         public SemesterRegistration? GetSemesterRegistration(int semesterRegistrationId);
         public IEnumerable<SemesterRegistration> GetSemesterRegistrations();
 
+        // logs
+        public void AddErrorLog(ApiErrorLog log);
+        public void AddErrorLog(DbErrorLog log);
     }
 }

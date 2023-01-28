@@ -286,6 +286,16 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
+        public void AddErrorLog(ApiErrorLog log)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddErrorLog(DbErrorLog log)
+        {
+            throw new NotImplementedException();
+        }
+
         public Student GetStudent(int studentId)
         {
             throw new NotImplementedException();

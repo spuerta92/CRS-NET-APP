@@ -27,6 +27,8 @@ namespace CRS_DAO.EntityFramework
         public DbSet<RegistrationStatus> RegistrationStatus { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<SemesterRegistration> SemesterRegistration { get; set; }
+        public DbSet<ApiErrorLog> ApiServiceLogs { get; set; }
+        public DbSet<DbErrorLog> DatabaseLogs { get; set; }
 
     }
 }
