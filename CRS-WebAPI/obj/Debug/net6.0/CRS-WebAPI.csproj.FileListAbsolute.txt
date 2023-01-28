@@ -1,9 +1,3 @@
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.csproj.AssemblyReference.cache
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.GeneratedMSBuildEditorConfig.editorconfig
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.AssemblyInfoInputs.cache
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.AssemblyInfo.cs
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.csproj.CoreCompileInputs.cache
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\appsettings.Development.json
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\appsettings.json
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-WebAPI.exe
@@ -97,7 +91,13 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-COMMO
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-DAO.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-DTOS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-MODELS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.csproj.AssemblyReference.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.AssemblyInfoInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.AssemblyInfo.cs
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.csproj.CoreCompileInputs.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.CRS-WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.CRS-WebAPI.props
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CRS-WebAPI.props
@@ -112,3 +112,5 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\refint\CR
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.genruntimeconfig.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\ref\CRS-WebAPI.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-EXCEPTIONS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-EXCEPTIONS.pdb

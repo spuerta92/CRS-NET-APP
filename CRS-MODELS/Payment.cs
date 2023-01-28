@@ -9,19 +9,6 @@ namespace CRS_MODELS
 {
     public class Payment
     {
-        public Payment(int paymentId, string paymentName, int studentId, DateTime dueDate, string semester, int paymentMethodId, byte isPaid, string uUID, DateTime createDateTime)
-        {
-            PaymentId = paymentId;
-            PaymentName = paymentName;
-            StudentId = studentId;
-            DueDate = dueDate;
-            Semester = semester;
-            PaymentMethodId = paymentMethodId;
-            IsPaid = isPaid;
-            UUID = uUID;
-            CreateDateTime = createDateTime;
-        }
-
         [Key]
         public int PaymentId { get; set; }
         public string PaymentName { get; set; }

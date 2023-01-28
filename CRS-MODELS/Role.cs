@@ -15,14 +15,5 @@ namespace CRS_MODELS
         public string Description { get; set; }
         public string UUID { get; set; }
         public DateTime CreateDateTime { get; set; }
-
-        public Role(int roleId, string roleName, string description, string uUID, DateTime createDateTime)
-        {
-            RoleId = roleId;
-            RoleName = roleName;
-            Description = description;
-            UUID = uUID;
-            CreateDateTime = createDateTime;
-        }
     }
 }

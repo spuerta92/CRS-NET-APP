@@ -883,7 +883,8 @@
       },
       "CRS-BUSINESS/1.0.0": {
         "dependencies": {
-          "CRS-DAO": "1.0.0"
+          "CRS-DAO": "1.0.0",
+          "CRS-EXCEPTIONS": "1.0.0"
         },
         "runtime": {
           "CRS-BUSINESS.dll": {}
@@ -901,6 +902,7 @@
       },
       "CRS-DAO/1.0.0": {
         "dependencies": {
+          "CRS-COMMON": "1.0.0",
           "CRS-MODELS": "1.0.0",
           "Dapper": "2.0.123",
           "Microsoft.EntityFrameworkCore": "7.0.2",
@@ -915,6 +917,11 @@
       "CRS-DTOS/1.0.0": {
         "runtime": {
           "CRS-DTOS.dll": {}
+        }
+      },
+      "CRS-EXCEPTIONS/1.0.0": {
+        "runtime": {
+          "CRS-EXCEPTIONS.dll": {}
         }
       },
       "CRS-MODELS/1.0.0": {
@@ -1548,6 +1555,11 @@
       "sha512": ""
     },
     "CRS-DTOS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRS-EXCEPTIONS/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

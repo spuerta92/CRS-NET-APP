@@ -2,6 +2,7 @@ using CRS_DAO;
 using CRS_DAO.EntityFramework;
 using CRS_WebAPI;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
 
@@ -41,9 +42,10 @@ builder.Services.ConfigureCors();
 //==================================================================================================================================
 //==================================================================================================================================
 var app = builder.Build();
+var env = app.Environment;
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (env.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
     app.UseSwagger();

@@ -1,11 +1,11 @@
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\bin\Debug\net6.0\CRS-MODELS.deps.json
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\bin\Debug\net6.0\CRS-MODELS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\bin\Debug\net6.0\CRS-MODELS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\obj\Debug\net6.0\CRS-MODELS.csproj.AssemblyReference.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\obj\Debug\net6.0\CRS-MODELS.GeneratedMSBuildEditorConfig.editorconfig
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\obj\Debug\net6.0\CRS-MODELS.AssemblyInfoInputs.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\obj\Debug\net6.0\CRS-MODELS.AssemblyInfo.cs
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\obj\Debug\net6.0\CRS-MODELS.csproj.CoreCompileInputs.cache
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\bin\Debug\net6.0\CRS-MODELS.deps.json
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\bin\Debug\net6.0\CRS-MODELS.dll
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\bin\Debug\net6.0\CRS-MODELS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\obj\Debug\net6.0\CRS-MODELS.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\obj\Debug\net6.0\refint\CRS-MODELS.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-MODELS\obj\Debug\net6.0\CRS-MODELS.pdb

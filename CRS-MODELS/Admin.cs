@@ -18,17 +18,5 @@ namespace CRS_MODELS
         public int UserId { get; set; }
         public string UUID { get; set; }
         public DateTime CreateDateTime { get; set; }
-
-        public Admin(int adminId, string adminName, string email, string phone, string address, int userId, string uUID, DateTime createDateTime)
-        {
-            AdminId = adminId;
-            AdminName = adminName;
-            Email = email;
-            Phone = phone;
-            Address = address;
-            UserId = userId;
-            UUID = uUID;
-            CreateDateTime = createDateTime;
-        }
     }
 }

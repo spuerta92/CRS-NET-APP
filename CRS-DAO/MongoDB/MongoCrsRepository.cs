@@ -19,13 +19,13 @@ namespace CRS_DAO.MongoDB
         private const string adminCollectionName = "Admin";
 
         private readonly IMongoCollection<Users> usersCollection;
-        private readonly IMongoCollection<Student> studentsCollection;
-        private readonly IMongoCollection<Professor> professorsCollection;
+        private readonly IMongoCollection<Students> studentsCollection;
+        private readonly IMongoCollection<Professors> professorsCollection;
         private readonly IMongoCollection<Admin> adminCollection;
 
         private readonly FilterDefinitionBuilder<Users> userFilterBuilder = Builders<Users>.Filter;
-        private readonly FilterDefinitionBuilder<Student> studentFilterBuilder = Builders<Student>.Filter;
-        private readonly FilterDefinitionBuilder<Professor> professorFilterBuilder = Builders<Professor>.Filter;
+        private readonly FilterDefinitionBuilder<Students> studentFilterBuilder = Builders<Students>.Filter;
+        private readonly FilterDefinitionBuilder<Professors> professorFilterBuilder = Builders<Professors>.Filter;
         private readonly FilterDefinitionBuilder<Admin> adminFilterBuilder = Builders<Admin>.Filter;
 
         public MongoCrsRepository(IMongoClient mongoClient)
@@ -33,8 +33,8 @@ namespace CRS_DAO.MongoDB
             IMongoDatabase database = mongoClient.GetDatabase(databaseName);
 
             usersCollection = database.GetCollection<Users>(usersCollectionName);
-            studentsCollection = database.GetCollection<Student>(studentsCollectionName);
-            professorsCollection = database.GetCollection<Professor>(professorsCollectionName);
+            studentsCollection = database.GetCollection<Students>(studentsCollectionName);
+            professorsCollection = database.GetCollection<Professors>(professorsCollectionName);
             adminCollection = database.GetCollection<Admin>(adminCollectionName);
         }
 
@@ -79,7 +79,7 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
-        public Professor AddProfessor(Professor professor)
+        public Professors AddProfessor(Professors professor)
         {
             throw new NotImplementedException();
         }
@@ -99,7 +99,7 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
-        public Student AddStudent(Student student)
+        public Students AddStudent(Students student)
         {
             throw new NotImplementedException();
         }
@@ -166,6 +166,11 @@ namespace CRS_DAO.MongoDB
         }
 
         public void DeleteStudent(int studentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RegisteredCourse RegisterForCourse(RegisteredCourse registeredCourse)
         {
             throw new NotImplementedException();
         }
@@ -246,12 +251,12 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
-        public Professor GetProfessor(int professorId)
+        public Professors GetProfessor(int professorId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Professor> GetProfessors()
+        public IEnumerable<Professors> GetProfessors()
         {
             throw new NotImplementedException();
         }
@@ -286,12 +291,22 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
-        public Student GetStudent(int studentId)
+        public void AddErrorLog(ApiErrorLog log)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Student> GetStudents()
+        public void AddErrorLog(DbErrorLog log)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Students GetStudent(int studentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Students> GetStudents()
         {
             throw new NotImplementedException();
         }
@@ -350,7 +365,7 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
-        public Professor UpdateProfessor(Professor professor)
+        public Professors UpdateProfessor(Professors professor)
         {
             throw new NotImplementedException();
         }
@@ -370,7 +385,7 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
-        public Student UpdateStudent(Student student)
+        public Students UpdateStudent(Students student)
         {
             throw new NotImplementedException();
         }
@@ -381,6 +396,66 @@ namespace CRS_DAO.MongoDB
         }
 
         IEnumerable<Admin> ICrsRepository.GetAdmins()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ProfessorCourses AddProfessorCourses(ProfessorCourses professorCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteProfessorCourses(int professorCourseId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ProfessorCourses UpdateProfessorCourses(ProfessorCourses professorCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ProfessorCourses? GetProfessorCourse(int professorCourseId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ProfessorCourses> GetProfessorCourses()
+        {
+            throw new NotImplementedException();
+        }
+
+        public RegisteredCourse AddRegisteredCourse(RegisteredCourse registeredCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteRegisteredCourse(int registeredCourseId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RegisteredCourse UpdateRegisteredCourse(RegisteredCourse registeredCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RegisteredCourse? GetRegisteredCourse(int registeredCourseId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<RegisteredCourse> GetRegisteredCourses()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Students? GetStudentByUserId(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SemesterRegistration? GetSemesterRegistrationByStudentId(int studentId)
         {
             throw new NotImplementedException();
         }

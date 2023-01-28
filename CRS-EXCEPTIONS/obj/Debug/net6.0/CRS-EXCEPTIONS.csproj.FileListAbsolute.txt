@@ -1,0 +1,12 @@
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\bin\Debug\net6.0\CRS-EXCEPTIONS.deps.json
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\bin\Debug\net6.0\CRS-EXCEPTIONS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\bin\Debug\net6.0\CRS-EXCEPTIONS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\obj\Debug\net6.0\CRS-EXCEPTIONS.csproj.AssemblyReference.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\obj\Debug\net6.0\CRS-EXCEPTIONS.GeneratedMSBuildEditorConfig.editorconfig
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\obj\Debug\net6.0\CRS-EXCEPTIONS.AssemblyInfoInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\obj\Debug\net6.0\CRS-EXCEPTIONS.AssemblyInfo.cs
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\obj\Debug\net6.0\CRS-EXCEPTIONS.csproj.CoreCompileInputs.cache
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\obj\Debug\net6.0\CRS-EXCEPTIONS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\obj\Debug\net6.0\refint\CRS-EXCEPTIONS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\obj\Debug\net6.0\CRS-EXCEPTIONS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-EXCEPTIONS\obj\Debug\net6.0\ref\CRS-EXCEPTIONS.dll

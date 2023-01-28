@@ -10,26 +10,68 @@ namespace CRS_DAO
     public interface ICrsRepository 
     {
         // users
+        /// <summary>
+        /// Add a user to db
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public Users AddUser(Users user);
+
+        /// <summary>
+        /// Deletes a user from db
+        /// </summary>
+        /// <param name="userId"></param>
         public void DeleteUser(int userId);
+
+        /// <summary>
+        /// Updates an existing user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public Users UpdateUser(Users user);
+
+        /// <summary>
+        /// Gets a user by userId from the db
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public Users? GetUser(int userId);
+
+        /// <summary>
+        /// Gets a user by username, password, and roleId
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
         public Users? GetUser(string userName, string password, int roleId);
+
+        /// <summary>
+        /// Gets a list of users
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Users> GetUsers();
 
         // students
-        public Student AddStudent(Student student);
+        public Students AddStudent(Students student);
         public void DeleteStudent(int studentId);
-        public Student UpdateStudent(Student student);
-        public Student? GetStudent(int studentId);
-        public IEnumerable<Student> GetStudents();
+        public RegisteredCourse RegisterForCourse(RegisteredCourse registeredCourse);
+        public Students UpdateStudent(Students student);
+        public Students? GetStudent(int studentId);
+        /// <summary>
+        /// Gets student by userId
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public Students? GetStudentByUserId(int userId);
+        public IEnumerable<Students> GetStudents();
 
         // professors
-        public Professor AddProfessor(Professor professor);
+        public Professors AddProfessor(Professors professor);
         public void DeleteProfessor(int professorId);
-        public Professor UpdateProfessor(Professor professor);
-        public Professor? GetProfessor(int professorId);
-        public IEnumerable<Professor> GetProfessors();
+        public Professors UpdateProfessor(Professors professor);
+        public Professors? GetProfessor(int professorId);
+        public IEnumerable<Professors> GetProfessors();
 
         // admin
         public Admin AddAdmin(Admin admin);
@@ -99,7 +141,30 @@ namespace CRS_DAO
         public void DeleteSemesterRegistration(int semesterRegistrationId);
         public SemesterRegistration UpdateSemesterRegistration(SemesterRegistration semesterRegistration);
         public SemesterRegistration? GetSemesterRegistration(int semesterRegistrationId);
+        /// <summary>
+        /// Get student semester registration by studentId
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
+        public SemesterRegistration? GetSemesterRegistrationByStudentId(int studentId);
         public IEnumerable<SemesterRegistration> GetSemesterRegistrations();
 
+        // professor courses
+        public ProfessorCourses AddProfessorCourses(ProfessorCourses professorCourse);
+        public void DeleteProfessorCourses(int professorCourseId);
+        public ProfessorCourses UpdateProfessorCourses(ProfessorCourses professorCourse);
+        public ProfessorCourses? GetProfessorCourse(int professorCourseId);
+        public IEnumerable<ProfessorCourses> GetProfessorCourses();
+
+        // registered courses
+        public RegisteredCourse AddRegisteredCourse(RegisteredCourse registeredCourse);
+        public void DeleteRegisteredCourse(int registeredCourseId);
+        public RegisteredCourse UpdateRegisteredCourse(RegisteredCourse registeredCourse);
+        public RegisteredCourse? GetRegisteredCourse(int registeredCourseId);
+        public IEnumerable<RegisteredCourse> GetRegisteredCourses();
+
+        // logs
+        public void AddErrorLog(ApiErrorLog log);
+        public void AddErrorLog(DbErrorLog log);
     }
 }

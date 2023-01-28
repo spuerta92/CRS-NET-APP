@@ -15,14 +15,5 @@ namespace CRS_MODELS
         public string Description { get; set; }
         public string UUID { get; set; }
         public DateTime CreateDateTime { get; set; }
-
-        public RegistrationStatus(int registrationStatusId, string registrationStatusName, string description, string uUID, DateTime createDateTime)
-        {
-            RegistrationStatusId = registrationStatusId;
-            RegistrationStatusName = registrationStatusName;
-            Description = description;
-            UUID = uUID;
-            CreateDateTime = createDateTime;
-        }
     }
 }

@@ -15,14 +15,5 @@ namespace CRS_MODELS
         public int Description { get; set; }
         public string UUID { get; set; }
         public DateTime CreateDateTime { get; set; }
-
-        public Major(int majorId, int majorName, int description, string uUID, DateTime createDateTime)
-        {
-            MajorId = majorId;
-            MajorName = majorName;
-            Description = description;
-            UUID = uUID;
-            CreateDateTime = createDateTime;
-        }
     }
 }

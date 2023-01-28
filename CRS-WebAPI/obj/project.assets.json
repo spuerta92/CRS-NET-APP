@@ -1436,7 +1436,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "CRS-DAO": "1.0.0"
+          "CRS-DAO": "1.0.0",
+          "CRS-EXCEPTIONS": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CRS-BUSINESS.dll": {}
@@ -1464,6 +1465,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "CRS-COMMON": "1.0.0",
           "CRS-MODELS": "1.0.0",
           "Dapper": "2.0.123",
           "Microsoft.EntityFrameworkCore": "7.0.2",
@@ -1486,6 +1488,16 @@
         },
         "runtime": {
           "bin/placeholder/CRS-DTOS.dll": {}
+        }
+      },
+      "CRS-EXCEPTIONS/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CRS-EXCEPTIONS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CRS-EXCEPTIONS.dll": {}
         }
       },
       "CRS-MODELS/1.0.0": {
@@ -4285,6 +4297,11 @@
       "type": "project",
       "path": "../CRS-DTOS/CRS-DTOS.csproj",
       "msbuildProject": "../CRS-DTOS/CRS-DTOS.csproj"
+    },
+    "CRS-EXCEPTIONS/1.0.0": {
+      "type": "project",
+      "path": "../CRS-EXCEPTIONS/CRS-EXCEPTIONS.csproj",
+      "msbuildProject": "../CRS-EXCEPTIONS/CRS-EXCEPTIONS.csproj"
     },
     "CRS-MODELS/1.0.0": {
       "type": "project",

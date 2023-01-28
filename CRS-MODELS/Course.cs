@@ -15,14 +15,5 @@ namespace CRS_MODELS
         public string Description { get; set; }
         public string UUID { get; set; }
         public DateTime CreateDateTime { get; set; }
-
-        public Course(int courseId, string courseName, string description, string uUID, DateTime createDateTime)
-        {
-            CourseId = courseId;
-            CourseName = courseName;
-            Description = description;
-            UUID = uUID;
-            CreateDateTime = createDateTime;
-        }
     }
 }

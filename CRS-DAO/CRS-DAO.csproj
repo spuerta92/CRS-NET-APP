@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CRS-COMMON\CRS-COMMON.csproj" />
     <ProjectReference Include="..\CRS-MODELS\CRS-MODELS.csproj" />
   </ItemGroup>
 

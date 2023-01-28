@@ -9,15 +9,6 @@ namespace CRS_MODELS
 {
     public class ProfessorCourses
     {
-        public ProfessorCourses(int professorCoursesId, int professorId, int courseId, string uUID, DateTime createDateTime)
-        {
-            ProfessorCoursesId = professorCoursesId;
-            ProfessorId = professorId;
-            CourseId = courseId;
-            UUID = uUID;
-            CreateDateTime = createDateTime;
-        }
-
         [Key]
         public int ProfessorCoursesId { get; set; }
         public int ProfessorId { get; set; }

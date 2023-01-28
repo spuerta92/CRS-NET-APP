@@ -9,12 +9,17 @@ using System.Threading.Tasks;
 
 namespace CRS_DAO.EntityFramework
 {
+    /// <summary>
+    /// Database layer
+    /// </summary>
     public class EFCrsRepository : ICrsRepository
     {
         private readonly CrsContext db;
+        private readonly DbLogger log;
         public EFCrsRepository(CrsContext db)
         {
             this.db = db;
+            log = new DbLogger();
         }
 
         public Admin AddAdmin(Admin admin)
@@ -26,10 +31,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch(SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch(Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -46,10 +53,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -66,10 +75,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -86,15 +97,51 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                //log.DbError(ex.Message);
+                throw;
+            }
+
+            var result = db.Departments.Where(x => x.DepartmentId == deparment.DepartmentId).SingleOrDefault();
+            return result;
+        }
+
+        public void AddErrorLog(ApiErrorLog log)
+        {
+            try
+            {
+                db.Add(log);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
                 throw;
             }
+        }
 
-            var result = db.Departments.Where(x => x.DepartmentId == deparment.DepartmentId).SingleOrDefault();
-            return result;
+        public void AddErrorLog(DbErrorLog log)
+        {
+            try
+            {
+                db.Add(log);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public Major AddMajor(Major major)
@@ -106,10 +153,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -126,10 +175,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -146,10 +197,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -157,7 +210,7 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
-        public Professor AddProfessor(Professor professor)
+        public Professors AddProfessor(Professors professor)
         {
             try
             {
@@ -166,14 +219,60 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
             var result = db.Professors.Where(x => x.ProfessorId == professor.ProfessorId).SingleOrDefault();
+            return result;
+        }
+
+        public ProfessorCourses AddProfessorCourses(ProfessorCourses professorCourse)
+        {
+            try
+            {
+                db.Add(professorCourse);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                //log.DbError(ex.Message);
+                throw;
+            }
+
+            var result = db.ProfessorCourses.Where(x => x.ProfessorCoursesId == professorCourse.ProfessorCoursesId).SingleOrDefault();
+            return result;
+        }
+
+        public RegisteredCourse AddRegisteredCourse(RegisteredCourse registeredCourse)
+        {
+            try
+            {
+                db.Add(registeredCourse);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                //log.DbError(ex.Message);
+                throw;
+            }
+
+            var result = db.RegisteredCourses.Where(x => x.RegisteredCourseId == registeredCourse.RegisteredCourseId).SingleOrDefault();
             return result;
         }
 
@@ -186,10 +285,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -206,10 +307,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -226,10 +329,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -237,7 +342,7 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
-        public Student AddStudent(Student student)
+        public Students AddStudent(Students student)
         {
             try
             {
@@ -246,10 +351,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -257,6 +364,12 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
+        /// <summary>
+        /// Adds a new user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public Users AddUser(Users user)
         {
             try
@@ -266,10 +379,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
 
@@ -287,10 +402,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -305,10 +422,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -323,10 +442,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -341,10 +462,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -359,10 +482,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -377,10 +502,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -395,10 +522,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -413,10 +542,52 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
+                throw;
+            }
+        }
+
+        public void DeleteProfessorCourses(int professorCourseId)
+        {
+            try
+            {
+                var professorCourse = db.ProfessorCourses.Where(x => x.ProfessorCoursesId == professorCourseId).SingleOrDefault();
+                db.ProfessorCourses.Remove(professorCourse);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                //log.DbError(ex.Message);
+                throw;
+            }
+        }
+
+        public void DeleteRegisteredCourse(int registeredCourseId)
+        {
+            try
+            {
+                var registeredCourse = db.RegisteredCourses.Where(x => x.RegisteredCourseId == registeredCourseId).SingleOrDefault();
+                db.RegisteredCourses.Remove(registeredCourse);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -431,10 +602,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -449,10 +622,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -467,10 +642,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -485,14 +662,26 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
 
+        public RegisteredCourse RegisterForCourse(RegisteredCourse registeredCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Deletes a user
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <exception cref="Exception"></exception>
         public void DeleteUser(int userId)
         {
             try
@@ -503,10 +692,12 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
             catch (Exception ex)
             {
+                //log.DbError(ex.Message);
                 throw;
             }
         }
@@ -581,14 +772,34 @@ namespace CRS_DAO.EntityFramework
             return db.Payment;
         }
 
-        public Professor? GetProfessor(int professorId)
+        public Professors? GetProfessor(int professorId)
         {
             return db.Professors.Where(x => x.ProfessorId == professorId).SingleOrDefault();
         }
 
-        public IEnumerable<Professor> GetProfessors()
+        public ProfessorCourses? GetProfessorCourse(int professorCourseId)
+        {
+            return db.ProfessorCourses.Where(x => x.ProfessorCoursesId == professorCourseId).SingleOrDefault();
+        }
+
+        public IEnumerable<ProfessorCourses> GetProfessorCourses()
+        {
+            return db.ProfessorCourses;
+        }
+
+        public IEnumerable<Professors> GetProfessors()
         {
             return db.Professors;
+        }
+
+        public RegisteredCourse? GetRegisteredCourse(int registeredCourseId)
+        {
+            return db.RegisteredCourses.Where(x => x.RegisteredCourseId == registeredCourseId).SingleOrDefault();
+        }
+
+        public IEnumerable<RegisteredCourse> GetRegisteredCourses()
+        {
+            return db.RegisteredCourses;
         }
 
         public RegistrationStatus? GetRegistrationStatus(int registrationStatusId)
@@ -621,26 +832,42 @@ namespace CRS_DAO.EntityFramework
             return db.SemesterRegistration;
         }
 
-        public Student? GetStudent(int studentId)
+        public Students? GetStudent(int studentId)
         {
             return db.Students.Where(x => x.StudentId == studentId).SingleOrDefault();
         }
 
-        public IEnumerable<Student> GetStudents()
+        public IEnumerable<Students> GetStudents()
         {
             return db.Students;
         }
 
+        /// <summary>
+        /// Get a specific user by userId
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public Users? GetUser(int userId)
         {
             return db.Users.Where(x => x.UserId == userId).SingleOrDefault();
         }
 
+        /// <summary>
+        /// Gets a specific user by username, password, roleId combination
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
         public Users? GetUser(string userName, string password, int roleId)
         {
             return db.Users.Where(x => x.UserName == userName && x.Password == password && x.RoleId == roleId).SingleOrDefault();
         }
 
+        /// <summary>
+        /// Gets a list of all users
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Users> GetUsers()
         {
             return db.Users;
@@ -656,6 +883,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch(SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message); 
             }
 
@@ -672,6 +900,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
@@ -688,6 +917,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
@@ -704,6 +934,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
@@ -720,6 +951,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
@@ -736,6 +968,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
@@ -752,26 +985,62 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
             return db.PaymentMethods.Where(x => x.PaymentMethodId == paymentMethod.PaymentMethodId).SingleOrDefault();
         }
 
-        public Professor UpdateProfessor(Professor professor)
+        public Professors UpdateProfessor(Professors professor)
         {
             try
             {
                 var existingProfessor = db.Professors.Where(x => x.ProfessorId == professor.ProfessorId).SingleOrDefault();
-                db.Entry<Professor>(existingProfessor).CurrentValues.SetValues(professor);
+                db.Entry<Professors>(existingProfessor).CurrentValues.SetValues(professor);
                 db.SaveChanges();
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
             return db.Professors.Where(x => x.ProfessorId == professor.ProfessorId).SingleOrDefault();
+        }
+
+        public ProfessorCourses UpdateProfessorCourses(ProfessorCourses professorCourse)
+        {
+            try
+            {
+                var existingProfessorCourse = db.ProfessorCourses.Where(x => x.ProfessorCoursesId == professorCourse.ProfessorCoursesId).SingleOrDefault();
+                db.Entry<ProfessorCourses>(existingProfessorCourse).CurrentValues.SetValues(existingProfessorCourse);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+
+            return db.ProfessorCourses.Where(x => x.ProfessorCoursesId == professorCourse.ProfessorCoursesId).SingleOrDefault();
+        }
+
+        public RegisteredCourse UpdateRegisteredCourse(RegisteredCourse registeredCourse)
+        {
+            try
+            {
+                var existingRegisteredCourse = db.RegisteredCourses.Where(x => x.RegisteredCourseId == registeredCourse.RegisteredCourseId).SingleOrDefault();
+                db.Entry<RegisteredCourse>(existingRegisteredCourse).CurrentValues.SetValues(registeredCourse);
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+
+            return db.RegisteredCourses.Where(x => x.RegisteredCourseId == registeredCourse.RegisteredCourseId).SingleOrDefault();
         }
 
         public RegistrationStatus UpdateRegistrationStatus(RegistrationStatus registrationStatus)
@@ -784,6 +1053,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
@@ -800,6 +1070,7 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
@@ -816,42 +1087,61 @@ namespace CRS_DAO.EntityFramework
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
             return db.SemesterRegistration.Where(x => x.RegistrationId == semesterRegistration.RegistrationId).SingleOrDefault();
         }
 
-        public Student UpdateStudent(Student student)
+        public Students UpdateStudent(Students student)
         {
             try
             {
-                var existingStudent = db.Students.Where(x => x.StudentId == student.StudentId).SingleOrDefault();
-                db.Entry<Student>(existingStudent).CurrentValues.SetValues(student);
+                var existingStudent = db.Students.SingleOrDefault(x => x.StudentId == student.StudentId);
+                db.Entry<Students>(existingStudent).CurrentValues.SetValues(student);
                 db.SaveChanges();
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
             return db.Students.Where(x => x.StudentId == student.StudentId).SingleOrDefault();
         }
 
+        /// <summary>
+        /// Updates data of a specific user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public Users UpdateUser(Users user)
         {
             try
             {
-                var existingUser = db.Users.Where(x => x.UserId == user.UserId).SingleOrDefault();
+                var existingUser = db.Users.SingleOrDefault(x => x.UserId == user.UserId);
                 db.Entry<Users>(existingUser).CurrentValues.SetValues(user);
                 db.SaveChanges();
             }
             catch (SqlException ex)
             {
+                //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
 
             return db.Users.Where(x => x.UserId == user.UserId).SingleOrDefault();
+        }
+
+        public SemesterRegistration? GetSemesterRegistrationByStudentId(int studentId)
+        {
+            return db.SemesterRegistration.Where(x => x.StudentId == studentId).SingleOrDefault();
+        }
+
+        public Students? GetStudentByUserId(int userId)
+        {
+            return db.Students.Where(x => x.UserId == userId).SingleOrDefault();
         }
     }
 }

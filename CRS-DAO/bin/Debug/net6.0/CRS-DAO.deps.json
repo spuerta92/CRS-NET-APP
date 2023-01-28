@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "CRS-DAO/1.0.0": {
         "dependencies": {
+          "CRS-COMMON": "1.0.0",
           "CRS-MODELS": "1.0.0",
           "Dapper": "2.0.123",
           "Microsoft.EntityFrameworkCore": "7.0.2",
@@ -568,6 +569,14 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.2": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.2.27524"
+          }
+        }
+      },
       "Portable.BouncyCastle/1.9.0": {
         "runtime": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
@@ -819,6 +828,21 @@
             "assemblyVersion": "0.6.2.0",
             "fileVersion": "0.6.2.0"
           }
+        }
+      },
+      "CRS-COMMON/1.0.0": {
+        "dependencies": {
+          "CRS-DTOS": "1.0.0",
+          "CRS-MODELS": "1.0.0",
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "runtime": {
+          "CRS-COMMON.dll": {}
+        }
+      },
+      "CRS-DTOS/1.0.0": {
+        "runtime": {
+          "CRS-DTOS.dll": {}
         }
       },
       "CRS-MODELS/1.0.0": {
@@ -1142,6 +1166,13 @@
       "path": "mysql.data/8.0.32",
       "hashPath": "mysql.data.8.0.32.nupkg.sha512"
     },
+    "Newtonsoft.Json/13.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
+      "path": "newtonsoft.json/13.0.2",
+      "hashPath": "newtonsoft.json.13.0.2.nupkg.sha512"
+    },
     "Portable.BouncyCastle/1.9.0": {
       "type": "package",
       "serviceable": true,
@@ -1379,6 +1410,16 @@
       "sha512": "sha512-jPao/LdUNLUz8rn3H1D8W7wQbZsRZM0iayvWI4xGejJg3XJHT56gcmYdgmCGPdJF1UEBqUjucCRrFB+4HbJsbw==",
       "path": "zstdsharp.port/0.6.2",
       "hashPath": "zstdsharp.port.0.6.2.nupkg.sha512"
+    },
+    "CRS-COMMON/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CRS-DTOS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "CRS-MODELS/1.0.0": {
       "type": "project",

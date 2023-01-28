@@ -86,7 +86,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Professor AddProfessor(Professor professor)
+        public Professors AddProfessor(Professors professor)
         {
             throw new NotImplementedException();
         }
@@ -106,7 +106,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Student AddStudent(Student student)
+        public Students AddStudent(Students student)
         {
             throw new NotImplementedException();
         }
@@ -186,7 +186,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Professor> GetAdmins()
+        public IEnumerable<Professors> GetAdmins()
         {
             throw new NotImplementedException();
         }
@@ -251,12 +251,12 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Professor GetProfessor(int professorId)
+        public Professors GetProfessor(int professorId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Professor> GetProfessors()
+        public IEnumerable<Professors> GetProfessors()
         {
             throw new NotImplementedException();
         }
@@ -291,12 +291,22 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Student GetStudent(int studentId)
+        public void AddErrorLog(ApiErrorLog log)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Student> GetStudents()
+        public void AddErrorLog(DbErrorLog log)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Students GetStudent(int studentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Students> GetStudents()
         {
             throw new NotImplementedException();
         }
@@ -351,7 +361,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Professor UpdateProfessor(Professor professor)
+        public Professors UpdateProfessor(Professors professor)
         {
             throw new NotImplementedException();
         }
@@ -371,7 +381,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Student UpdateStudent(Student student)
+        public Students UpdateStudent(Students student)
         {
             throw new NotImplementedException();
         }
@@ -382,6 +392,71 @@ namespace CRS_DAO.MySQL
         }
 
         IEnumerable<Admin> ICrsRepository.GetAdmins()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ProfessorCourses AddProfessorCourses(ProfessorCourses professorCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteProfessorCourses(int professorCourseId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ProfessorCourses UpdateProfessorCourses(ProfessorCourses professorCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ProfessorCourses? GetProfessorCourse(int professorCourseId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ProfessorCourses> GetProfessorCourses()
+        {
+            throw new NotImplementedException();
+        }
+
+        public RegisteredCourse AddRegisteredCourse(RegisteredCourse registeredCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteRegisteredCourse(int registeredCourseId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RegisteredCourse UpdateRegisteredCourse(RegisteredCourse registeredCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public RegisteredCourse? GetRegisteredCourse(int registeredCourseId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<RegisteredCourse> GetRegisteredCourses()
+        {
+            throw new NotImplementedException();
+        }
+
+        public RegisteredCourse RegisterForCourse(RegisteredCourse registeredCourse)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Students? GetStudentByUserId(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public SemesterRegistration? GetSemesterRegistrationByStudentId(int studentId)
         {
             throw new NotImplementedException();
         }
