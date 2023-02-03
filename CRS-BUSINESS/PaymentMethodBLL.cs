@@ -1,5 +1,6 @@
 ﻿using CRS_DAO;
 using CRS_MODELS;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,34 +9,36 @@ using System.Threading.Tasks;
 
 namespace CRS_BUSINESS
 {
-    public class PaymentMethodMethodBLL
+    public class PaymentMethodBLL
     {
         private readonly ICrsRepository repository;
+        private readonly ILogger<PaymentMethodBLL> logger;
 
-        public PaymentMethodMethodBLL(ICrsRepository repository)
+        public PaymentMethodBLL(ILogger<PaymentMethodBLL> logger, ICrsRepository repository)
         {
             this.repository = repository;
+            this.logger = logger;
         }
 
-        public IEnumerable<PaymentMethod> GetPaymentMethods()
+        public IEnumerable<PaymentMethods> GetPaymentMethods()
         {
             var paymentMethods = repository.GetPaymentMethods();
             return paymentMethods;
         }
 
-        public PaymentMethod GetPaymentMethod(int paymentMethodId)
+        public PaymentMethods GetPaymentMethod(int paymentMethodId)
         {
             var paymentMethod = repository.GetPaymentMethod(paymentMethodId);
             return paymentMethod;
         }
 
-        public PaymentMethod AddPaymentMethod(PaymentMethod paymentMethod)
+        public PaymentMethods AddPaymentMethod(PaymentMethods paymentMethod)
         {
             var newPaymentMethod = repository.AddPaymentMethod(paymentMethod);
             return newPaymentMethod;
         }
 
-        public PaymentMethod UpdatePaymentMethod(PaymentMethod paymentMethod)
+        public PaymentMethods UpdatePaymentMethod(PaymentMethods paymentMethod)
         {
             var existingPaymentMethod = repository.UpdatePaymentMethod(paymentMethod);
             return existingPaymentMethod;

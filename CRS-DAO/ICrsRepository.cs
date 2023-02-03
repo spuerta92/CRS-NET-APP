@@ -81,32 +81,32 @@ namespace CRS_DAO
         public IEnumerable<Admin> GetAdmins();
 
         // course catalog
-        public CourseCatalog AddCourseToCourseCatalog(CourseCatalog course);
+        public CourseCatalogs AddCourseToCourseCatalog(CourseCatalogs course);
         public void DeleteCourseFromCourseCatalog(int courseId);
-        public CourseCatalog UpdateCourseInCourseCatalog(CourseCatalog course);
-        public CourseCatalog? GetCourseFromCourseCatalog(int courseId);
-        public IEnumerable<CourseCatalog> GetAllCoursesFromCourseCatalog();
+        public CourseCatalogs UpdateCourseInCourseCatalog(CourseCatalogs course);
+        public CourseCatalogs? GetCourseFromCourseCatalog(int courseId);
+        public IEnumerable<CourseCatalogs> GetAllCoursesFromCourseCatalog();
 
         // courses
-        public Course AddCourse(Course course);
+        public Courses AddCourse(Courses course);
         public void DeleteCourse(int courseId);
-        public Course UpdateCourse(Course course);
-        public Course? GetCourse(int courseId);
-        public IEnumerable<Course> GetCourses();
+        public Courses UpdateCourse(Courses course);
+        public Courses? GetCourse(int courseId);
+        public IEnumerable<Courses> GetCourses();
 
         // departments
-        public Department AddDepartment(Department deparment);
+        public Departments AddDepartment(Departments deparment);
         public void DeleteDepartment(int deparmentId);
-        public Department UpdateDepartment(Department deparment);
-        public Department? GetDepartment(int deparmentId);
-        public IEnumerable<Department> GetDepartments();
+        public Departments UpdateDepartment(Departments deparment);
+        public Departments? GetDepartment(int deparmentId);
+        public IEnumerable<Departments> GetDepartments();
 
         // majors
-        public Major AddMajor(Major major);
+        public Majors AddMajor(Majors major);
         public void DeleteMajor(int majorId);
-        public Major UpdateMajor(Major major);
-        public Major? GetMajor(int majorId);
-        public IEnumerable<Major> GetMajors();
+        public Majors UpdateMajor(Majors major);
+        public Majors? GetMajor(int majorId);
+        public IEnumerable<Majors> GetMajors();
 
         // payment
         public Payment AddPayment(Payment payment);
@@ -116,11 +116,11 @@ namespace CRS_DAO
         public IEnumerable<Payment> GetPayments();
 
         // payment methods
-        public PaymentMethod AddPaymentMethod(PaymentMethod paymentMethod);
+        public PaymentMethods AddPaymentMethod(PaymentMethods paymentMethod);
         public void DeletePaymentMethod(int paymentMethodId);
-        public PaymentMethod UpdatePaymentMethod(PaymentMethod paymentMethod);
-        public PaymentMethod? GetPaymentMethod(int paymentMethodId);
-        public IEnumerable<PaymentMethod> GetPaymentMethods();
+        public PaymentMethods UpdatePaymentMethod(PaymentMethods paymentMethod);
+        public PaymentMethods? GetPaymentMethod(int paymentMethodId);
+        public IEnumerable<PaymentMethods> GetPaymentMethods();
 
         // registration status
         public RegistrationStatus AddRegistrationStatus(RegistrationStatus registrationStatus);
@@ -130,11 +130,11 @@ namespace CRS_DAO
         public IEnumerable<RegistrationStatus> GetRegistrationStatuses();
 
         // roles
-        public Role AddRole(Role role);
+        public Roles AddRole(Roles role);
         public void DeleteRole(int roleId);
-        public Role UpdateRole(Role role);
-        public Role? GetRole(int roleId);
-        public IEnumerable<Role> GetRoles();
+        public Roles UpdateRole(Roles role);
+        public Roles? GetRole(int roleId);
+        public IEnumerable<Roles> GetRoles();
 
         // semester registration
         public SemesterRegistration AddSemesterRegistration(SemesterRegistration semesterRegistration);

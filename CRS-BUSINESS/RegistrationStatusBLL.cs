@@ -1,5 +1,6 @@
 ﻿using CRS_DAO;
 using CRS_MODELS;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,15 @@ namespace CRS_BUSINESS
     public class RegistrationStatusBLL
     {
         private readonly ICrsRepository repository;
+        private readonly ILogger<RegistrationStatusBLL> logger;
 
-        public RegistrationStatusBLL(ICrsRepository repository)
+        public RegistrationStatusBLL(ILogger<RegistrationStatusBLL> logger, ICrsRepository repository)
         {
             this.repository = repository;
+            this.logger = logger;
         }
 
-        public IEnumerable<RegistrationStatus> GetRegistrationStatuss()
+        public IEnumerable<RegistrationStatus> GetRegistrationStatus()
         {
             var registrationStatuses = repository.GetRegistrationStatuses();
             return registrationStatuses;

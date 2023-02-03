@@ -8,6 +8,7 @@ using CRS_DTOS.PaymentMethodDtos;
 using CRS_DTOS.ProfessorCoursesDtos;
 using CRS_DTOS.ProfessorDtos;
 using CRS_DTOS.RegisteredCourseDtos;
+using CRS_DTOS.RegistrationStatusDtos;
 using CRS_DTOS.RoleDtos;
 using CRS_DTOS.SemesterRegistrationDtos;
 using CRS_DTOS.StudentDtos;
@@ -77,7 +78,7 @@ namespace CRS_COMMON
             };
         }
 
-        public static CourseDto AsDto(this Course course)
+        public static CourseDto AsDto(this Courses course)
         {
             return new CourseDto()
             {
@@ -89,7 +90,7 @@ namespace CRS_COMMON
             };
         }
 
-        public static CourseCatalogDto AsDto(this CourseCatalog courseCatalog)
+        public static CourseCatalogDto AsDto(this CourseCatalogs courseCatalog)
         {
             return new CourseCatalogDto()
             {
@@ -123,7 +124,7 @@ namespace CRS_COMMON
             };
         }
 
-        public static PaymentMethodDto AsDto(this PaymentMethod paymentMethod)
+        public static PaymentMethodDto AsDto(this PaymentMethods paymentMethod)
         {
             return new PaymentMethodDto()
             {
@@ -135,7 +136,7 @@ namespace CRS_COMMON
             };
         }
 
-        public static MajorDto AsDto(this Major major)
+        public static MajorDto AsDto(this Majors major)
         {
             return new MajorDto()
             {
@@ -147,7 +148,7 @@ namespace CRS_COMMON
             };
         }
 
-        public static RoleDto AsDto(this Role role)
+        public static RoleDto AsDto(this Roles role)
         {
             return new RoleDto()
             {
@@ -159,7 +160,7 @@ namespace CRS_COMMON
             };
         }
 
-        public static DepartmentDto AsDto(this Department department)
+        public static DepartmentDto AsDto(this Departments department)
         {
             return new DepartmentDto()
             {
@@ -208,6 +209,18 @@ namespace CRS_COMMON
                 Grade = registeredCourse.Grade,
                 UUID = registeredCourse.UUID,
                 CreateDateTime = registeredCourse.CreateDateTime
+            };
+        }
+
+        public static RegistrationStatusDto AsDto(this RegistrationStatus registrationStatus)
+        {
+            return new RegistrationStatusDto()
+            {
+                RegistrationStatusId = registrationStatus.RegistrationStatusId,
+                RegistrationStatusName = registrationStatus.RegistrationStatusName,
+                Description = registrationStatus.Description,
+                UUID = registrationStatus.UUID,
+                CreateDateTime = registrationStatus.CreateDateTime
             };
         }
     }

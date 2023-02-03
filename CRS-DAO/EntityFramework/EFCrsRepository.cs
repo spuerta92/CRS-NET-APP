@@ -44,7 +44,7 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
-        public Course AddCourse(Course course)
+        public Courses AddCourse(Courses course)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
-        public CourseCatalog AddCourseToCourseCatalog(CourseCatalog course)
+        public CourseCatalogs AddCourseToCourseCatalog(CourseCatalogs course)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
-        public Department AddDepartment(Department deparment)
+        public Departments AddDepartment(Departments deparment)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace CRS_DAO.EntityFramework
             }
         }
 
-        public Major AddMajor(Major major)
+        public Majors AddMajor(Majors major)
         {
             try
             {
@@ -188,7 +188,7 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
-        public PaymentMethod AddPaymentMethod(PaymentMethod paymentMethod)
+        public PaymentMethods AddPaymentMethod(PaymentMethods paymentMethod)
         {
             try
             {
@@ -298,7 +298,7 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
-        public Role AddRole(Role role)
+        public Roles AddRole(Roles role)
         {
             try
             {
@@ -712,42 +712,42 @@ namespace CRS_DAO.EntityFramework
             return db.Admin;
         }
 
-        public IEnumerable<CourseCatalog> GetAllCoursesFromCourseCatalog()
+        public IEnumerable<CourseCatalogs> GetAllCoursesFromCourseCatalog()
         {
             return db.CourseCatalog;
         }
 
-        public Course? GetCourse(int courseId)
+        public Courses? GetCourse(int courseId)
         {
             return db.Courses.Where(x => x.CourseId == courseId).SingleOrDefault();
         }
 
-        public CourseCatalog? GetCourseFromCourseCatalog(int courseId)
+        public CourseCatalogs? GetCourseFromCourseCatalog(int courseId)
         {
             return db.CourseCatalog.Where(x => x.CourseId == courseId).SingleOrDefault();
         }
 
-        public IEnumerable<Course> GetCourses()
+        public IEnumerable<Courses> GetCourses()
         {
             return db.Courses;
         }
 
-        public Department? GetDepartment(int departmentId)
+        public Departments? GetDepartment(int departmentId)
         {
             return db.Departments.Where(x => x.DepartmentId == departmentId).SingleOrDefault();
         }
 
-        public IEnumerable<Department> GetDepartments()
+        public IEnumerable<Departments> GetDepartments()
         {
             return db.Departments;
         }
 
-        public Major? GetMajor(int majorId)
+        public Majors? GetMajor(int majorId)
         {
             return db.Majors.Where(x => x.MajorId == majorId).SingleOrDefault();
         }
 
-        public IEnumerable<Major> GetMajors()
+        public IEnumerable<Majors> GetMajors()
         {
             return db.Majors;
         }
@@ -757,12 +757,12 @@ namespace CRS_DAO.EntityFramework
             return db.Payment.Where(x => x.PaymentId == paymentId).SingleOrDefault();
         }
 
-        public PaymentMethod? GetPaymentMethod(int paymentMethodId)
+        public PaymentMethods? GetPaymentMethod(int paymentMethodId)
         {
             return db.PaymentMethods.Where(x => x.PaymentMethodId == paymentMethodId).SingleOrDefault();
         }
 
-        public IEnumerable<PaymentMethod> GetPaymentMethods()
+        public IEnumerable<PaymentMethods> GetPaymentMethods()
         {
             return db.PaymentMethods;
         }
@@ -812,12 +812,12 @@ namespace CRS_DAO.EntityFramework
             return db.RegistrationStatus;
         }
 
-        public Role? GetRole(int roleId)
+        public Roles? GetRole(int roleId)
         {
             return db.Roles.Where(x => x.RoleId == roleId).SingleOrDefault();
         }
 
-        public IEnumerable<Role> GetRoles()
+        public IEnumerable<Roles> GetRoles()
         {
             return db.Roles;
         }
@@ -890,12 +890,12 @@ namespace CRS_DAO.EntityFramework
             return db.Admin.Where(x => x.AdminId == admin.AdminId).SingleOrDefault();
         }
 
-        public Course UpdateCourse(Course course)
+        public Courses UpdateCourse(Courses course)
         {
             try
             {
                 var existingCourse = db.Courses.Where(x => x.CourseId == course.CourseId).SingleOrDefault();
-                db.Entry<Course>(existingCourse).CurrentValues.SetValues(course);
+                db.Entry<Courses>(existingCourse).CurrentValues.SetValues(course);
                 db.SaveChanges();
             }
             catch (SqlException ex)
@@ -907,12 +907,12 @@ namespace CRS_DAO.EntityFramework
             return db.Courses.Where(x => x.CourseId == course.CourseId).SingleOrDefault();
         }
 
-        public CourseCatalog UpdateCourseInCourseCatalog(CourseCatalog course)
+        public CourseCatalogs UpdateCourseInCourseCatalog(CourseCatalogs course)
         {
             try
             {
                 var existingCourseCatalogItem = db.CourseCatalog.Where(x => x.CourseId == course.CourseId).SingleOrDefault();
-                db.Entry<CourseCatalog>(existingCourseCatalogItem).CurrentValues.SetValues(course);
+                db.Entry<CourseCatalogs>(existingCourseCatalogItem).CurrentValues.SetValues(course);
                 db.SaveChanges();
             }
             catch (SqlException ex)
@@ -924,12 +924,12 @@ namespace CRS_DAO.EntityFramework
             return db.CourseCatalog.Where(x => x.CourseId == course.CourseId).SingleOrDefault();
         }
 
-        public Department UpdateDepartment(Department deparment)
+        public Departments UpdateDepartment(Departments deparment)
         {
             try
             {
                 var existingDepartment = db.Departments.Where(x => x.DepartmentId == deparment.DepartmentId).SingleOrDefault();
-                db.Entry<Department>(existingDepartment).CurrentValues.SetValues(deparment);
+                db.Entry<Departments>(existingDepartment).CurrentValues.SetValues(deparment);
                 db.SaveChanges();
             }
             catch (SqlException ex)
@@ -941,12 +941,12 @@ namespace CRS_DAO.EntityFramework
             return db.Departments.Where(x => x.DepartmentId == deparment.DepartmentId).SingleOrDefault();
         }
 
-        public Major UpdateMajor(Major major)
+        public Majors UpdateMajor(Majors major)
         {
             try
             {
                 var existingMajor = db.Majors.Where(x => x.MajorId == major.MajorId).SingleOrDefault();
-                db.Entry<Major>(existingMajor).CurrentValues.SetValues(major);
+                db.Entry<Majors>(existingMajor).CurrentValues.SetValues(major);
                 db.SaveChanges();
             }
             catch (SqlException ex)
@@ -975,12 +975,12 @@ namespace CRS_DAO.EntityFramework
             return db.Payment.Where(x => x.PaymentId == payment.PaymentId).SingleOrDefault();
         }
 
-        public PaymentMethod UpdatePaymentMethod(PaymentMethod paymentMethod)
+        public PaymentMethods UpdatePaymentMethod(PaymentMethods paymentMethod)
         {
             try
             {
                 var existingPaymentMethod = db.PaymentMethods.Where(x => x.PaymentMethodId == paymentMethod.PaymentMethodId).SingleOrDefault();
-                db.Entry<PaymentMethod>(existingPaymentMethod).CurrentValues.SetValues(paymentMethod);
+                db.Entry<PaymentMethods>(existingPaymentMethod).CurrentValues.SetValues(paymentMethod);
                 db.SaveChanges();
             }
             catch (SqlException ex)
@@ -1060,12 +1060,12 @@ namespace CRS_DAO.EntityFramework
             return db.RegistrationStatus.Where(x => x.RegistrationStatusId == registrationStatus.RegistrationStatusId).SingleOrDefault();
         }
 
-        public Role UpdateRole(Role role)
+        public Roles UpdateRole(Roles role)
         {
             try
             {
                 var existingRole = db.Roles.Where(x => x.RoleId == role.RoleId).SingleOrDefault();
-                db.Entry<Role>(existingRole).CurrentValues.SetValues(role);
+                db.Entry<Roles>(existingRole).CurrentValues.SetValues(role);
                 db.SaveChanges();
             }
             catch (SqlException ex)

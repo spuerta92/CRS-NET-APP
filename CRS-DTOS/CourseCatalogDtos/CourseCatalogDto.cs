@@ -17,7 +17,7 @@ namespace CRS_DTOS.CourseCatalogDtos
         public int Capacity { get; set; }
         public int Enrolled { get; set; }
         public string Semester { get; set; }
-        public string UUID { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public string? UUID { get; set; }
+        public DateTime? CreateDateTime { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace CRS_DTOS.DepartmentDtos
         public int DepartmentId { get; set; }
         public string DepartmentName { get; set; }
         public string Description { get; set; }
-        public string UUID { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public string? UUID { get; set; }
+        public DateTime? CreateDateTime { get; set; }
     }
 }

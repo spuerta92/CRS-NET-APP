@@ -171,7 +171,7 @@ namespace CRS_BUSINESS
             }
             catch (Exception ex)
             {
-                throw new Exception("There was error updating user information");
+                throw;
             }
         }
 

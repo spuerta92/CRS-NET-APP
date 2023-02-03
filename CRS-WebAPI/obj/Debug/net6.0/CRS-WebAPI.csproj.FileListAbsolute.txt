@@ -114,3 +114,4 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAP
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\ref\CRS-WebAPI.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-EXCEPTIONS.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-EXCEPTIONS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\RestSharp.dll

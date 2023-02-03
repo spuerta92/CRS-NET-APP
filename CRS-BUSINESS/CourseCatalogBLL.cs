@@ -1,5 +1,6 @@
 ﻿using CRS_DAO;
 using CRS_MODELS;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,34 +9,36 @@ using System.Threading.Tasks;
 
 namespace CRS_BUSINESS
 {
-    public class CourseCatalogCatalogBLL
+    public class CourseCatalogBLL
     {
         private readonly ICrsRepository repository;
+        private readonly ILogger<CourseCatalogBLL> logger;
 
-        public CourseCatalogCatalogBLL(ICrsRepository repository)
+        public CourseCatalogBLL(ILogger<CourseCatalogBLL> logger, ICrsRepository repository)
         {
             this.repository = repository;
+            this.logger = logger;
         }
 
-        public IEnumerable<CourseCatalog> GetAllCoursesFromCourseCatalog()
+        public IEnumerable<CourseCatalogs> GetAllCoursesFromCourseCatalog()
         {
             var courses = repository.GetAllCoursesFromCourseCatalog();
             return courses;
         }
 
-        public CourseCatalog GetCourseFromCourseCatalog(int courseId)
+        public CourseCatalogs GetCourseFromCourseCatalog(int courseId)
         {
             var course = repository.GetCourseFromCourseCatalog(courseId);
             return course;
         }
 
-        public CourseCatalog AddCourseToCourseCatalog(CourseCatalog course)
+        public CourseCatalogs AddCourseToCourseCatalog(CourseCatalogs course)
         {
             var newCourse = repository.AddCourseToCourseCatalog(course);
             return newCourse;
         }
 
-        public CourseCatalog UpdateCourseInCourseCatalog(CourseCatalog course)
+        public CourseCatalogs UpdateCourseInCourseCatalog(CourseCatalogs course)
         {
             var existingCourse = repository.UpdateCourseInCourseCatalog(course);
             return existingCourse;

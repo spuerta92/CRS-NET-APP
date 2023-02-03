@@ -56,22 +56,22 @@ namespace CRS_DAO.MySQL
             }
         }
 
-        public Course AddCourse(Course course)
+        public Courses AddCourse(Courses course)
         {
             throw new NotImplementedException();
         }
 
-        public CourseCatalog AddCourseToCourseCatalog(CourseCatalog course)
+        public CourseCatalogs AddCourseToCourseCatalog(CourseCatalogs course)
         {
             throw new NotImplementedException();
         }
 
-        public Department AddDepartment(Department deparment)
+        public Departments AddDepartment(Departments deparment)
         {
             throw new NotImplementedException();
         }
 
-        public Major AddMajor(Major major)
+        public Majors AddMajor(Majors major)
         {
             throw new NotImplementedException();
         }
@@ -81,7 +81,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public PaymentMethod AddPaymentMethod(PaymentMethod paymentMethod)
+        public PaymentMethods AddPaymentMethod(PaymentMethods paymentMethod)
         {
             throw new NotImplementedException();
         }
@@ -96,7 +96,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Role AddRole(Role role)
+        public Roles AddRole(Roles role)
         {
             throw new NotImplementedException();
         }
@@ -191,42 +191,42 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<CourseCatalog> GetAllCoursesFromCourseCatalog()
+        public IEnumerable<CourseCatalogs> GetAllCoursesFromCourseCatalog()
         {
             throw new NotImplementedException();
         }
 
-        public Course GetCourse(int courseId)
+        public Courses GetCourse(int courseId)
         {
             throw new NotImplementedException();
         }
 
-        public CourseCatalog GetCourseFromCourseCatalog(int courseId)
+        public CourseCatalogs GetCourseFromCourseCatalog(int courseId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Course> GetCourses()
+        public IEnumerable<Courses> GetCourses()
         {
             throw new NotImplementedException();
         }
 
-        public Department GetDepartment(int deparmentId)
+        public Departments GetDepartment(int deparmentId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Department> GetDepartments()
+        public IEnumerable<Departments> GetDepartments()
         {
             throw new NotImplementedException();
         }
 
-        public Major GetMajor(int majorId)
+        public Majors GetMajor(int majorId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Major> GetMajors()
+        public IEnumerable<Majors> GetMajors()
         {
             throw new NotImplementedException();
         }
@@ -236,12 +236,12 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public PaymentMethod GetPaymentMethod(int paymentMethodId)
+        public PaymentMethods GetPaymentMethod(int paymentMethodId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<PaymentMethod> GetPaymentMethods()
+        public IEnumerable<PaymentMethods> GetPaymentMethods()
         {
             throw new NotImplementedException();
         }
@@ -271,12 +271,12 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Role GetRole(int roleId)
+        public Roles GetRole(int roleId)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Role> GetRoles()
+        public IEnumerable<Roles> GetRoles()
         {
             throw new NotImplementedException();
         }
@@ -331,22 +331,22 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Course UpdateCourse(Course course)
+        public Courses UpdateCourse(Courses course)
         {
             throw new NotImplementedException();
         }
 
-        public CourseCatalog UpdateCourseInCourseCatalog(CourseCatalog course)
+        public CourseCatalogs UpdateCourseInCourseCatalog(CourseCatalogs course)
         {
             throw new NotImplementedException();
         }
 
-        public Department UpdateDepartment(Department deparment)
+        public Departments UpdateDepartment(Departments deparment)
         {
             throw new NotImplementedException();
         }
 
-        public Major UpdateMajor(Major major)
+        public Majors UpdateMajor(Majors major)
         {
             throw new NotImplementedException();
         }
@@ -356,7 +356,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public PaymentMethod UpdatePaymentMethod(PaymentMethod paymentMethod)
+        public PaymentMethods UpdatePaymentMethod(PaymentMethods paymentMethod)
         {
             throw new NotImplementedException();
         }
@@ -371,7 +371,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public Role UpdateRole(Role role)
+        public Roles UpdateRole(Roles role)
         {
             throw new NotImplementedException();
         }

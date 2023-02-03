@@ -71,7 +71,7 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in GetUsers Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
             }
         }
 
@@ -179,7 +179,7 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in GetUser Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
             }
         }
 
@@ -236,7 +236,7 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in AddUser Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
             }
         }
 
@@ -297,7 +297,7 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in AddUser Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
             }
         }
 
