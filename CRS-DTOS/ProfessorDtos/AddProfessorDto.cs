@@ -12,7 +12,7 @@ namespace CRS_DTOS.ProfessorDtos
         [Required]
         public string ProfessorName { get; set; }
         [Required]
-        public string DepartmentId { get; set; }
+        public int DepartmentId { get; set; }
         [Required]
         public string Email { get; set; }
         [Required]

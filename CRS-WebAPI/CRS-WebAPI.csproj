@@ -19,20 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Department\" />
-    <Folder Include="Controllers\Course\" />
-    <Folder Include="Controllers\Major\" />
-    <Folder Include="Controllers\CourseCatalog\" />
-    <Folder Include="Controllers\SemesterRegistration\" />
-    <Folder Include="Controllers\Role\" />
-    <Folder Include="Controllers\RegistrationStatus\" />
-    <Folder Include="Controllers\RegisteredCourses\" />
-    <Folder Include="Controllers\ProfessorCourses\" />
-    <Folder Include="Controllers\PaymentMethod\" />
-    <Folder Include="Controllers\Payment\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\CRS-BUSINESS\CRS-BUSINESS.csproj" />
     <ProjectReference Include="..\CRS-COMMON\CRS-COMMON.csproj" />
     <ProjectReference Include="..\CRS-DAO\CRS-DAO.csproj" />

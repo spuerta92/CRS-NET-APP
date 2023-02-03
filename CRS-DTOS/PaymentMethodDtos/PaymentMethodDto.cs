@@ -11,7 +11,7 @@ namespace CRS_DTOS.PaymentMethodDtos
         public int PaymentMethodId { get; set; }
         public string PaymentMethodName { get; set; }
         public string Description { get; set; }
-        public string UUID { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public string? UUID { get; set; }
+        public DateTime? CreateDateTime { get; set; }
     }
 }

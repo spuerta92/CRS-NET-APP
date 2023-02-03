@@ -13,7 +13,7 @@ namespace CRS_DTOS.SemesterRegistrationDtos
         public int ApprovalStatus { get; set; }
         public int AdminId { get; set; }
         public string Comment { get; set; }
-        public string UUID { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public string? UUID { get; set; }
+        public DateTime? CreateDateTime { get; set; }
     }
 }

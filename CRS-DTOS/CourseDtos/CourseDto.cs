@@ -11,7 +11,7 @@ namespace CRS_DTOS.CourseDtos
         public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string Description { get; set; }
-        public string UUID { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public string? UUID { get; set; }
+        public DateTime? CreateDateTime { get; set; }
     }
 }

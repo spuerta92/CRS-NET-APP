@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CRS-DAO\CRS-DAO.csproj" />
+    <ProjectReference Include="..\CRS-EXCEPTIONS\CRS-EXCEPTIONS.csproj" />
   </ItemGroup>
 
 </Project>

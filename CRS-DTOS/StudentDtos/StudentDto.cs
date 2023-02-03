@@ -15,7 +15,7 @@ namespace CRS_DTOS.StudentDtos
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public string UUID { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public string? UUID { get; set; }
+        public DateTime? CreateDateTime { get; set; }
     }
 }

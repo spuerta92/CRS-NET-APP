@@ -8,6 +8,10 @@ using CRS_DTOS.PaymentMethodDtos;
 using CRS_DTOS.ProfessorCoursesDtos;
 using CRS_DTOS.ProfessorDtos;
 using CRS_DTOS.RegisteredCourseDtos;
+<<<<<<< HEAD
+=======
+using CRS_DTOS.RegistrationStatusDtos;
+>>>>>>> a113c99bf437f70cfa726660e3327fbc0878161b
 using CRS_DTOS.RoleDtos;
 using CRS_DTOS.SemesterRegistrationDtos;
 using CRS_DTOS.StudentDtos;
@@ -32,12 +36,14 @@ namespace CRS_COMMON
             };
         }
 
-        public static ProfessorDto AsDto(this Professor professor)
+        public static ProfessorDto AsDto(this Professors professor)
         {
             return new ProfessorDto()
             {
                 ProfessorId = professor.ProfessorId,
                 ProfessorName = professor.ProfessorName,
+                UserId = professor.UserId,
+                DepartmentId = professor.DepartmentId,
                 Email = professor.Email,
                 Address = professor.Address,
                 Phone = professor.Phone,
@@ -46,12 +52,14 @@ namespace CRS_COMMON
             };
         }
 
-        public static StudentDto AsDto(this Student student)
+        public static StudentDto AsDto(this Students student)
         {
             return new StudentDto()
             {
                 StudentId = student.StudentId,
                 StudentName = student.StudentName,
+                UserId = student.UserId,
+                MajorId = student.MajorId,
                 Email = student.Email,
                 Address = student.Address,
                 Phone = student.Phone,
@@ -73,7 +81,7 @@ namespace CRS_COMMON
             };
         }
 
-        public static CourseDto AsDto(this Course course)
+        public static CourseDto AsDto(this Courses course)
         {
             return new CourseDto()
             {
@@ -85,7 +93,11 @@ namespace CRS_COMMON
             };
         }
 
+<<<<<<< HEAD
         public static CourseCatalogDto AsDto(this CourseCatalog courseCatalog)
+=======
+        public static CourseCatalogDto AsDto(this CourseCatalogs courseCatalog)
+>>>>>>> a113c99bf437f70cfa726660e3327fbc0878161b
         {
             return new CourseCatalogDto()
             {
@@ -119,7 +131,11 @@ namespace CRS_COMMON
             };
         }
 
+<<<<<<< HEAD
         public static PaymentMethodDto AsDto(this PaymentMethod paymentMethod)
+=======
+        public static PaymentMethodDto AsDto(this PaymentMethods paymentMethod)
+>>>>>>> a113c99bf437f70cfa726660e3327fbc0878161b
         {
             return new PaymentMethodDto()
             {
@@ -131,7 +147,11 @@ namespace CRS_COMMON
             };
         }
 
+<<<<<<< HEAD
         public static MajorDto AsDto(this Major major)
+=======
+        public static MajorDto AsDto(this Majors major)
+>>>>>>> a113c99bf437f70cfa726660e3327fbc0878161b
         {
             return new MajorDto()
             {
@@ -143,7 +163,11 @@ namespace CRS_COMMON
             };
         }
 
+<<<<<<< HEAD
         public static RoleDto AsDto(this Role role)
+=======
+        public static RoleDto AsDto(this Roles role)
+>>>>>>> a113c99bf437f70cfa726660e3327fbc0878161b
         {
             return new RoleDto()
             {
@@ -155,7 +179,11 @@ namespace CRS_COMMON
             };
         }
 
+<<<<<<< HEAD
         public static DepartmentDto AsDto(this Department department)
+=======
+        public static DepartmentDto AsDto(this Departments department)
+>>>>>>> a113c99bf437f70cfa726660e3327fbc0878161b
         {
             return new DepartmentDto()
             {
@@ -206,5 +234,20 @@ namespace CRS_COMMON
                 CreateDateTime = registeredCourse.CreateDateTime
             };
         }
+<<<<<<< HEAD
+=======
+
+        public static RegistrationStatusDto AsDto(this RegistrationStatus registrationStatus)
+        {
+            return new RegistrationStatusDto()
+            {
+                RegistrationStatusId = registrationStatus.RegistrationStatusId,
+                RegistrationStatusName = registrationStatus.RegistrationStatusName,
+                Description = registrationStatus.Description,
+                UUID = registrationStatus.UUID,
+                CreateDateTime = registrationStatus.CreateDateTime
+            };
+        }
+>>>>>>> a113c99bf437f70cfa726660e3327fbc0878161b
     }
 }

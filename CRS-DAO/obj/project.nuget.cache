@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7UlIGHbk23goOANQ7Tb/udZ8mgJP4A5eX6NjFUoPBI4WMN5ETW5UWai1wmRGpmjlmJO7AZojIFu+wg1rNuZH+Q==",
+  "dgSpecHash": "x1e21vu/WWlKQLPoXlkeksG8yA9wS5zHs/Dd98Tp5WwC7BDhL0J3SMIGCDDP3LYXNdO2t7i7DdiG3GNl4tDqmQ==",
   "success": true,
   "projectFilePath": "C:\\dotnet-workspace\\CRS-DOTNETCORE-PROJECT\\CRS-DAO\\CRS-DAO.csproj",
   "expectedPackageFiles": [
@@ -48,7 +48,9 @@
     "C:\\Users\\spuerta000\\.nuget\\packages\\mongodb.driver.core\\2.18.0\\mongodb.driver.core.2.18.0.nupkg.sha512",
     "C:\\Users\\spuerta000\\.nuget\\packages\\mongodb.libmongocrypt\\1.6.0\\mongodb.libmongocrypt.1.6.0.nupkg.sha512",
     "C:\\Users\\spuerta000\\.nuget\\packages\\mysql.data\\8.0.32\\mysql.data.8.0.32.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\spuerta000\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\spuerta000\\.nuget\\packages\\restsharp\\108.0.3\\restsharp.108.0.3.nupkg.sha512",
     "C:\\Users\\spuerta000\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\spuerta000\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
     "C:\\Users\\spuerta000\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",

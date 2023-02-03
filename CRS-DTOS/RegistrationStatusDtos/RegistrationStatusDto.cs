@@ -11,7 +11,7 @@ namespace CRS_DTOS.RegistrationStatusDtos
         public int RegistrationStatusId { get; set; }
         public string RegistrationStatusName { get; set; }
         public string Description { get; set; }
-        public string UUID { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public string? UUID { get; set; }
+        public DateTime? CreateDateTime { get; set; }
     }
 }
