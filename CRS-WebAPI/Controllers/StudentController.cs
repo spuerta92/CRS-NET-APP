@@ -12,24 +12,26 @@ namespace CRS_WebAPI.Controllers
     /// Student controller api layer
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class StudentController : ControllerBase
     {
-        private readonly ILogger logger;
+        private readonly ILogger<StudentController> logger;
+        private readonly ILogger<StudentBLL> loggerBLL;
         private readonly ICrsRepository repository;
         private readonly DbLogger log;
         private readonly StudentBLL studentBLL;
-        public StudentController(ILogger logger, ICrsRepository repository)
+        public StudentController(ILogger<StudentController> logger, ILogger<StudentBLL> loggerBLL, ICrsRepository repository)
         {
             this.logger = logger;
+            this.loggerBLL = loggerBLL;
             this.repository = repository;
 
-            studentBLL = new StudentBLL(this.logger, this.repository);
+            studentBLL = new StudentBLL(this.loggerBLL, this.repository);
             log = new DbLogger(this.repository);
         }
 
         /// <summary>
-        /// 
+        /// Get list of students
         /// </summary>
         /// <returns></returns>
         [HttpGet("[action]")]
@@ -62,12 +64,12 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in GetStudents Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
             }
         }
 
         /// <summary>
-        /// 
+        /// Gets student by studentId
         /// </summary>
         /// <param name="studentId"></param>
         /// <returns></returns>
@@ -79,7 +81,7 @@ namespace CRS_WebAPI.Controllers
             {
                 if (studentId <= 0)
                 {
-                    return NoContent();
+                    return NotFound();
                 }
 
                 var student = studentBLL.GetStudent(studentId).AsDto();
@@ -107,12 +109,12 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in GetStudent Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
             }
         }
 
         /// <summary>
-        /// 
+        /// Add a new student
         /// </summary>
         /// <param name="studentDto"></param>
         /// <returns></returns>
@@ -124,7 +126,7 @@ namespace CRS_WebAPI.Controllers
             {
                 if (studentDto == null)
                 {
-                    return NoContent();
+                    return NotFound();
                 }
 
                 // add new student
@@ -146,7 +148,7 @@ namespace CRS_WebAPI.Controllers
                     return NotFound();
                 }
 
-                return newStudent;
+                return CreatedAtAction(nameof(GetStudent), new { id = newStudent.StudentId }, newStudent);
             }
             catch (BadHttpRequestException ex)
             {
@@ -164,12 +166,12 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in AddStudent Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
             }
         }
 
         /// <summary>
-        /// 
+        /// Update an existing student
         /// </summary>
         /// <param name="studentId"></param>
         /// <param name="studentDto"></param>
@@ -182,7 +184,7 @@ namespace CRS_WebAPI.Controllers
             {
                 if (studentDto == null)
                 {
-                    return NoContent();
+                    return NotFound();
                 }
 
                 // search for student
@@ -207,7 +209,7 @@ namespace CRS_WebAPI.Controllers
                 };
                 var updatedStudent = studentBLL.UpdateStudent(student).AsDto();
 
-                return updatedStudent;
+                return Ok(updatedStudent);
             }
             catch (BadHttpRequestException ex)
             {
@@ -225,12 +227,12 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in AddStudent Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
             }
         }
 
         /// <summary>
-        /// 
+        /// Delete a specific student
         /// </summary>
         /// <param name="studentId"></param>
         /// <returns></returns>
@@ -242,10 +244,11 @@ namespace CRS_WebAPI.Controllers
             {
                 if (studentId <= 0)
                 {
-                    return NoContent();
+                    return NotFound();
                 }
 
                 studentBLL.DeleteStudent(studentId);
+                return NoContent();
             }
             catch (BadHttpRequestException ex)
             {
@@ -263,14 +266,12 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in AddStudent Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
             }
-
-            return NoContent();
         }
 
         /// <summary>
-        /// 
+        /// Student course registration
         /// </summary>
         /// <param name="registerCourse"></param>
         /// <returns></returns>
@@ -282,8 +283,9 @@ namespace CRS_WebAPI.Controllers
             {
                 if (registerCourse == null)
                 {
-                    return NoContent();
+                    return NotFound();
                 }
+
                 var courseRegistration = studentBLL.RegisterForCourse(registerCourse);
                 return Ok(courseRegistration);
 
@@ -304,7 +306,87 @@ namespace CRS_WebAPI.Controllers
             {
                 logger.LogError($"Failure in AddStudent Controller Action: {ex}");
                 //log.ApiError(ex.Message);
-                return StatusCode(500, "Internal Server Error");
+                return Problem(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Student course registration
+        /// </summary>
+        /// <param name="registerCourse"></param>
+        /// <returns></returns>
+        [HttpPut("[action]")]
+        public ActionResult AddCourse([FromBody] RegisteredCourse registerCourse)
+        {
+            logger.LogInformation("From RegisterCourse action controller");
+            try
+            {
+                if (registerCourse == null)
+                {
+                    return NotFound();
+                }
+
+                var courseRegistration = studentBLL.AddCourse(registerCourse);
+                return CreatedAtAction(nameof(GetStudent), new { id = courseRegistration.StudentId} , courseRegistration);
+
+            }
+            catch (BadHttpRequestException ex)
+            {
+                logger.LogError($"Failure in AddStudent Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return StatusCode(ex.StatusCode, "Bad Request");
+            }
+            catch (HttpRequestException ex)
+            {
+                logger.LogError($"Failure in AddStudent Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return StatusCode((int)ex.StatusCode, "Bad Request");
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Failure in AddStudent Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return Problem(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Student course registration
+        /// </summary>
+        /// <param name="registerCourse"></param>
+        /// <returns></returns>
+        [HttpPut("[action]")]
+        public ActionResult DropCourse([FromBody] RegisteredCourse registerCourse)
+        {
+            logger.LogInformation("From RegisterCourse action controller");
+            try
+            {
+                if (registerCourse == null)
+                {
+                    return NotFound();
+                }
+
+                studentBLL.DropCourse(registerCourse);
+                return NoContent();
+
+            }
+            catch (BadHttpRequestException ex)
+            {
+                logger.LogError($"Failure in AddStudent Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return StatusCode(ex.StatusCode, "Bad Request");
+            }
+            catch (HttpRequestException ex)
+            {
+                logger.LogError($"Failure in AddStudent Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return StatusCode((int)ex.StatusCode, "Bad Request");
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Failure in AddStudent Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return Problem(ex.Message);
             }
         }
     }

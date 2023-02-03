@@ -13,7 +13,7 @@ namespace CRS_WebAPI.Controllers
     /// Major controller api layer
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class MajorController : ControllerBase
     {
         private readonly ILogger<MajorController> logger;

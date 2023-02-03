@@ -55,7 +55,6 @@ namespace CRS_DAO
         // students
         public Students AddStudent(Students student);
         public void DeleteStudent(int studentId);
-        public RegisteredCourse RegisterForCourse(RegisteredCourse registeredCourse);
         public Students UpdateStudent(Students student);
         public Students? GetStudent(int studentId);
         /// <summary>
@@ -161,6 +160,12 @@ namespace CRS_DAO
         public void DeleteRegisteredCourse(int registeredCourseId);
         public RegisteredCourse UpdateRegisteredCourse(RegisteredCourse registeredCourse);
         public RegisteredCourse? GetRegisteredCourse(int registeredCourseId);
+        /// <summary>
+        /// get student course registration by studentId
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
+        public RegisteredCourse? GetRegisteredCourseByStudentId(int studentId);
         public IEnumerable<RegisteredCourse> GetRegisteredCourses();
 
         // logs

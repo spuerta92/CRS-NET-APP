@@ -12,7 +12,7 @@ namespace CRS_WebAPI.Controllers
     /// Professor controller api layer
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class ProfessorController : ControllerBase
     {
         private readonly ILogger<ProfessorController> logger;

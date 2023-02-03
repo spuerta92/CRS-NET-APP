@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CRS_DTOS.RegisteredCourseDtos
@@ -13,7 +14,7 @@ namespace CRS_DTOS.RegisteredCourseDtos
         public int StudentId { get; set; }
         [Required]
         public int CourseId { get; set; }
-        [Required]
+        [JsonIgnore]
         public int RegistrationStatusId { get; set; }
         [Required]
         public string Grade { get; set; }

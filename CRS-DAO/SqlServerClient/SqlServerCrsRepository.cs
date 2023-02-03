@@ -455,5 +455,10 @@ namespace CRS_DAO.SqlServerClient
         {
             throw new NotImplementedException();
         }
+
+        public RegisteredCourse? GetRegisteredCourseByStudentId(int studentId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

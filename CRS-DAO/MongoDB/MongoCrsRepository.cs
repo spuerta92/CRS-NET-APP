@@ -445,6 +445,11 @@ namespace CRS_DAO.MongoDB
             throw new NotImplementedException();
         }
 
+        public RegisteredCourse? GetRegisteredCourseByStudentId(int studentId)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<RegisteredCourse> GetRegisteredCourses()
         {
             throw new NotImplementedException();

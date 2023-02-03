@@ -672,11 +672,6 @@ namespace CRS_DAO.EntityFramework
             }
         }
 
-        public RegisteredCourse RegisterForCourse(RegisteredCourse registeredCourse)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Deletes a user
         /// </summary>
@@ -1030,17 +1025,20 @@ namespace CRS_DAO.EntityFramework
         {
             try
             {
-                var existingRegisteredCourse = db.RegisteredCourses.Where(x => x.RegisteredCourseId == registeredCourse.RegisteredCourseId).SingleOrDefault();
-                db.Entry<RegisteredCourse>(existingRegisteredCourse).CurrentValues.SetValues(registeredCourse);
+                var existingCourseRegistration = db.RegisteredCourses
+                    .Where(x => x.CourseId == registeredCourse.CourseId && x.StudentId == registeredCourse.StudentId)
+                    .SingleOrDefault();
+                db.Entry<RegisteredCourse>(existingCourseRegistration).CurrentValues.SetValues(registeredCourse);
                 db.SaveChanges();
+                return db.RegisteredCourses
+                    .Where(x => x.CourseId == registeredCourse.CourseId && x.StudentId == registeredCourse.StudentId)
+                    .SingleOrDefault();
             }
             catch (SqlException ex)
             {
                 //log.DbError(ex.Message);
                 throw new Exception(ex.Message);
             }
-
-            return db.RegisteredCourses.Where(x => x.RegisteredCourseId == registeredCourse.RegisteredCourseId).SingleOrDefault();
         }
 
         public RegistrationStatus UpdateRegistrationStatus(RegistrationStatus registrationStatus)
@@ -1142,6 +1140,11 @@ namespace CRS_DAO.EntityFramework
         public Students? GetStudentByUserId(int userId)
         {
             return db.Students.Where(x => x.UserId == userId).SingleOrDefault();
+        }
+
+        public RegisteredCourse? GetRegisteredCourseByStudentId(int studentId)
+        {
+            return db.RegisteredCourses.Where(x => x.StudentId == studentId).SingleOrDefault();
         }
     }
 }

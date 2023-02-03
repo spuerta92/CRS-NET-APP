@@ -12,8 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Consumer\" />
-    <Folder Include="Producer\" />
+    <Folder Include="Confluent\" />
   </ItemGroup>
 
 </Project>

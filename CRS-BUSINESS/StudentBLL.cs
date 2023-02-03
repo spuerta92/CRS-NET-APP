@@ -11,9 +11,9 @@ namespace CRS_BUSINESS
     public class StudentBLL
     {
         private readonly ICrsRepository repository;
-        private readonly ILogger logger;
+        private readonly ILogger<StudentBLL> logger;
 
-        public StudentBLL(ILogger logger, ICrsRepository repository)
+        public StudentBLL(ILogger<StudentBLL> logger, ICrsRepository repository)
         {
             this.repository = repository;
             this.logger = logger;
@@ -74,7 +74,7 @@ namespace CRS_BUSINESS
             }
             catch (Exception ex)
             {
-                throw new Exception("There was an error adding new student");
+                throw new Exception(ex.Message);
             }
         }
 
@@ -116,7 +116,7 @@ namespace CRS_BUSINESS
         }
 
         /// <summary>
-        /// 
+        /// Student course registration
         /// </summary>
         /// <param name="course"></param>
         /// <returns></returns>
@@ -127,17 +127,133 @@ namespace CRS_BUSINESS
             try
             {
                 // check student semester registration
+                var semesterRegistration = repository.GetSemesterRegistrationByStudentId(course.StudentId);
+                if (semesterRegistration == null)
+                {
+                    throw new StudentNotRegisteredException(
+                        $"Student has not registered for the semester");
+                }
 
                 // check if course exists in course catalog
+                var courseCatalog = repository.GetCourseFromCourseCatalog(course.CourseId);
+                if (courseCatalog == null)
+                {
+                    throw new CourseNotFoundException("Course was not found in the course catalog");
+                }
 
                 // check if student is already registered for course
+                var studentCourseRegistration = repository.GetRegisteredCourseByStudentId(course.StudentId);
+                if (studentCourseRegistration == null)
+                {
+                    throw new StudentCourseNotFoundException("Student course not found");
+                }
 
-                // otherwise register student for course
-                return repository.RegisterForCourse(course);
+                // check if there's capacity for the course in the course catalog
+                if (courseCatalog.Enrolled >= courseCatalog.Capacity)
+                {
+                    throw new CannotRegisterForCourseException(
+                        "Cannot register for this course. Course is at max capacity");
+                }
+
+                // update registration
+                var courseRegistration = repository.UpdateRegisteredCourse(course);
+
+                // update course catalog
+                if (courseRegistration.RegistrationStatusId == 1)
+                {
+                    courseCatalog.Enrolled++;
+                    repository.UpdateCourseInCourseCatalog(courseCatalog);
+                }
+                else
+                {
+                    if (courseCatalog.Enrolled > 0)
+                    {
+                        courseCatalog.Enrolled--;
+                        repository.UpdateCourseInCourseCatalog(courseCatalog);
+                    }
+                }
+
+                return courseRegistration;
             }
             catch (Exception ex)
             {
-                throw new Exception("There was an error when registering for a course");
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Student course registration
+        /// </summary>
+        /// <param name="course"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public RegisteredCourse AddCourse(RegisteredCourse course)
+        {
+            logger.LogInformation("From student AddCourse service method");
+            try
+            {
+                // check student semester registration
+                var semesterRegistration = repository.GetSemesterRegistrationByStudentId(course.StudentId);
+                if (semesterRegistration == null)
+                {
+                    throw new StudentNotRegisteredException(
+                        $"Student has not registered for the semester");
+                }
+
+                // check if course exists in course catalog
+                var courseCatalog = repository.GetCourseFromCourseCatalog(course.CourseId);
+                if (courseCatalog == null)
+                {
+                    throw new CourseNotFoundException("Course was not found in the course catalog");
+                }
+
+                // check if student is already registered for course
+                var studentCourseRegistration = repository.GetRegisteredCourseByStudentId(course.StudentId);
+                if (studentCourseRegistration == null)
+                {
+                    return repository.AddRegisteredCourse(course);
+                }
+                return course;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Student course registration
+        /// </summary>
+        /// <param name="course"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public void DropCourse(RegisteredCourse course)
+        {
+            logger.LogInformation("From student DropCourse service method");
+            try
+            {
+                // check if course exists in course catalog
+                var courseCatalog = repository.GetCourseFromCourseCatalog(course.CourseId);
+                if (courseCatalog == null)
+                {
+                    throw new CourseNotFoundException("Course was not found in the course catalog");
+                }
+
+                // check if student is already registered for course
+                var studentCourseRegistration = repository.GetRegisteredCourseByStudentId(course.StudentId);
+                if (studentCourseRegistration != null)
+                {
+                    repository.DeleteRegisteredCourse(course.CourseId);
+                    if (courseCatalog.Enrolled > 0)
+                    {
+                        courseCatalog.Enrolled--;
+                        repository.UpdateCourseInCourseCatalog(courseCatalog);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

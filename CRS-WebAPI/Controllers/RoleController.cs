@@ -13,7 +13,7 @@ namespace CRS_WebAPI.Controllers
     /// Role controller api layer
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class RoleController : ControllerBase
     {
         private readonly ILogger<RoleController> logger;

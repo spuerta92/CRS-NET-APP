@@ -13,7 +13,7 @@ namespace CRS_WebAPI.Controllers
     /// Department controller api layer
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class DepartmentController : ControllerBase
     {
         private readonly ILogger<DepartmentController> logger;

@@ -13,7 +13,7 @@ namespace CRS_WebAPI.Controllers
     /// CourseCatalog controller api layer
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class CourseCatalogController : ControllerBase
     {
         private readonly ILogger<CourseCatalogController> logger;

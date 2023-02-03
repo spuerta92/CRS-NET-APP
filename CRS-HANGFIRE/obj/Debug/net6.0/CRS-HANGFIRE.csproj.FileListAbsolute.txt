@@ -49,3 +49,8 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-HANGFIRE\obj\Debug\net6.0\refint\
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-HANGFIRE\obj\Debug\net6.0\CRS-HANGFIRE.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-HANGFIRE\obj\Debug\net6.0\CRS-HANGFIRE.genruntimeconfig.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-HANGFIRE\obj\Debug\net6.0\ref\CRS-HANGFIRE.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-HANGFIRE\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-HANGFIRE\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-HANGFIRE\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-HANGFIRE\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-HANGFIRE\obj\Debug\net6.0\CRS-HANGFIRE.MvcApplicationPartsAssemblyInfo.cs

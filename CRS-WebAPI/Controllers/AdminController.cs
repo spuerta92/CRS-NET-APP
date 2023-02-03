@@ -6,7 +6,7 @@ namespace CRS_WebAPI.Controllers
     /// Admin controller api layer
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class AdminController : ControllerBase
     {
         private readonly ILogger<AdminController> logger;

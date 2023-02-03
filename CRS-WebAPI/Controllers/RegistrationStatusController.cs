@@ -13,7 +13,7 @@ namespace CRS_WebAPI.Controllers
     /// RegistrationStatus controller api layer
     /// </summary>
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class RegistrationStatusController : ControllerBase
     {
         private readonly ILogger<RegistrationStatusController> logger;
