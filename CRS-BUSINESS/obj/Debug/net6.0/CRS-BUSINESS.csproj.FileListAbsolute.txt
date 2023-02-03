@@ -4,8 +4,10 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-BUS
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-COMMON.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-DAO.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-DTOS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-EXCEPTIONS.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-MODELS.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-DAO.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-EXCEPTIONS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-COMMON.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-DTOS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-MODELS.pdb
@@ -19,5 +21,3 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\obj\Debug\net6.0\CRS-BUS
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\obj\Debug\net6.0\refint\CRS-BUSINESS.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\obj\Debug\net6.0\CRS-BUSINESS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\obj\Debug\net6.0\ref\CRS-BUSINESS.dll
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-EXCEPTIONS.dll
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-BUSINESS\bin\Debug\net6.0\CRS-EXCEPTIONS.pdb

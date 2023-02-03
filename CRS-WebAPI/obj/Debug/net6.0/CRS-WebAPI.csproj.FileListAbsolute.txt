@@ -52,6 +52,7 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\krb5_64.d
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\krbcc64.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\RestSharp.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\SharpCompress.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\Snappier.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -85,11 +86,13 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-BUSIN
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-COMMON.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-DAO.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-DTOS.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-EXCEPTIONS.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-MODELS.dll
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-BUSINESS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-COMMON.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-DAO.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-DTOS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-EXCEPTIONS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-MODELS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.csproj.AssemblyReference.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.GeneratedMSBuildEditorConfig.editorconfig
@@ -112,6 +115,3 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\refint\CR
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.genruntimeconfig.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\ref\CRS-WebAPI.dll
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-EXCEPTIONS.dll
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-EXCEPTIONS.pdb
-C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\RestSharp.dll
