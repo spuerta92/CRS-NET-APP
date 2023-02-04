@@ -11,13 +11,13 @@ namespace CRS_DAO
     public class DbLogger
     {
         private readonly ICrsRepository repository;
-        private readonly Helpers helpers;
+        private readonly Converter helpers;
 
         public DbLogger() {}
         public DbLogger(ICrsRepository repository)
         {
             this.repository = repository;
-            helpers = new Helpers();
+            helpers = new Converter();
         }
 
         public void ApiError(string message)

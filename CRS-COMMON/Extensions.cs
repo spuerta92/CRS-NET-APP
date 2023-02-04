@@ -14,6 +14,7 @@ using CRS_DTOS.SemesterRegistrationDtos;
 using CRS_DTOS.StudentDtos;
 using CRS_DTOS.UserDtos;
 using CRS_MODELS;
+using Newtonsoft.Json;
 
 namespace CRS_COMMON
 {
@@ -222,6 +223,21 @@ namespace CRS_COMMON
                 UUID = registrationStatus.UUID,
                 CreateDateTime = registrationStatus.CreateDateTime
             };
+        }
+
+        public static DateTime AsUiFormat(this DateTime date)
+        {
+            return DateTime.Parse($"{date.Month}/{date.Day}/{date.Year}");
+        }
+
+        public static string AsJsonString(this object entity)
+        {
+            return JsonConvert.SerializeObject(entity, Formatting.Indented);
+        }
+
+        public static T? AsJsonObject<T>(this string jsonString)
+        {
+            return JsonConvert.DeserializeObject<T>(jsonString);
         }
     }
 }
