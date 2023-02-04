@@ -6,7 +6,7 @@ namespace CRS_DAO.SqlServerClient
 {
     public class SqlServerCrsRepository : ICrsRepository
     {
-        private SqlConnection connection;
+        private readonly SqlConnection connection;
 
         public SqlServerCrsRepository()
         {
@@ -318,7 +318,35 @@ namespace CRS_DAO.SqlServerClient
 
         public IEnumerable<Users> GetUsers()
         {
-            throw new NotImplementedException();
+            List<Users>? items = null;
+
+            try
+            {
+                using (connection)
+                {
+                    connection.Open();
+
+                    // get users
+                    using (SqlCommand command = new SqlCommand(Constants.GetAllUsers(), connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            var parser = reader.GetRowParser<Users>(typeof(Users));
+                            while (reader.Read())
+                            {
+                                var item = parser(reader);
+                                items.Add(item);
+                            }
+
+                            return items;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public Admin UpdateAdmin(Admin admin)

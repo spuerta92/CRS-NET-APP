@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="canopy" Version="2.1.5" />
     <PackageReference Include="Gherkin" Version="26.0.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
@@ -31,6 +32,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CRS-COMMON\CRS-COMMON.csproj" />
+    <ProjectReference Include="..\CRS-DAO\CRS-DAO.csproj" />
   </ItemGroup>
 
 </Project>
