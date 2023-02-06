@@ -376,6 +376,9 @@ namespace CRS_DAO.EntityFramework
             {
                 db.Add(user);
                 db.SaveChanges();
+
+                var result = db.Users.Where(x => x.UserId == user.UserId).SingleOrDefault();
+                return result;
             }
             catch (SqlException ex)
             {
@@ -387,9 +390,6 @@ namespace CRS_DAO.EntityFramework
                 //log.DbError(ex.Message);
                 throw;
             }
-
-            var result = db.Users.Where(x => x.UserId == user.UserId).SingleOrDefault();
-            return result;
         }
 
         public void DeleteAdmin(int adminId)

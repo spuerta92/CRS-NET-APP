@@ -42,14 +42,8 @@ namespace CRS_WebAPI.Controllers
 
             try
             {
-                var users = userBLL.GetUsers().Select(user => user.AsDto()).ToList();
-
-                for (var i = 0; i < users.Count; i++)
-                {
-                    users[i].Password = "************************************";
-                }
-
-                return users;
+                var users = userBLL.GetUsers().Select(user => user.AsDto());
+                return Ok(users);
             }
             catch (SqlNullValueException ex)
             {
@@ -111,9 +105,9 @@ namespace CRS_WebAPI.Controllers
                 }
 
                 // hide password
-                user.Password = "************************************";
+                //user.Password = "************************************";
 
-                return user;
+                return Ok(user);
             }
             catch (BadHttpRequestException ex)
             {
@@ -159,9 +153,9 @@ namespace CRS_WebAPI.Controllers
                 }
 
                 // hide password
-                user.Password = "************************************";
+                //user.Password = "************************************";
 
-                return user;
+                return Ok(user);
             }
             catch (BadHttpRequestException ex)
             {
@@ -209,16 +203,16 @@ namespace CRS_WebAPI.Controllers
                     CreateDateTime = DateTime.Now
                 };
 
-                var newUser = userBLL.AddUser(user).AsDto();
+                var newUser = userBLL.AddUser(user);
                 if (newUser == null)
                 {
                     return NotFound();
                 }
 
                 // hide password
-                newUser.Password = "************************************";
+                //newUser.Password = "************************************";
 
-                return CreatedAtAction(nameof(GetUser), new { id = newUser.UserId}, newUser);
+                return CreatedAtAction(nameof(GetUser), new { id = newUser.UserId}, newUser.AsDto());
             }
             catch (BadHttpRequestException ex)
             {
@@ -277,7 +271,7 @@ namespace CRS_WebAPI.Controllers
                 var updatedUser = userBLL.UpdateUser(user).AsDto();
 
                 // hide password
-                updatedUser.Password = "************************************";
+                //updatedUser.Password = "************************************";
 
                 return Ok(updatedUser);
             }
