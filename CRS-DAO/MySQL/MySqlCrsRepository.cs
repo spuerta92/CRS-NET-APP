@@ -13,15 +13,17 @@ namespace CRS_DAO.MySQL
     {
         private MySqlConnection connection;
 
-        public MySqlCrsRepository() 
-        { 
-            connection = new MySqlConnection(DbSettings.MYSQLConnectionString);
+        private readonly string connectionString =
+            "server=localhost; user=root; database=crs; port=3306; password=root";
+
+        public MySqlCrsRepository()
+        {
         }
 
         public Admin AddAdmin(Admin admin)
         {
             Admin? item = null;
-
+            connection = new MySqlConnection(connectionString);
             try
             {
                 using (connection)
@@ -462,6 +464,11 @@ namespace CRS_DAO.MySQL
         }
 
         public RegisteredCourse? GetRegisteredCourseByStudentId(int studentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Users? GetLastUser()
         {
             throw new NotImplementedException();
         }

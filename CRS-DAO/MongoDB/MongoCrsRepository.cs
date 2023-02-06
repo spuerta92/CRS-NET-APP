@@ -464,5 +464,10 @@ namespace CRS_DAO.MongoDB
         {
             throw new NotImplementedException();
         }
+
+        public Users? GetLastUser()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

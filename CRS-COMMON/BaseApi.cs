@@ -21,6 +21,8 @@ namespace CRS_COMMON
             client.BaseAddress = new Uri(baseUri);
             client.Timeout = TimeSpan.FromSeconds(30);
 
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             return client;
         }
         protected HttpRequestMessage HttpRequest(string requestUri,
@@ -259,6 +261,8 @@ namespace CRS_COMMON
             var client = new RestClient(options);
             client.Options.MaxTimeout = (int)TimeSpan.FromSeconds(30).TotalSeconds;
 
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             return client;
         }
         protected RestRequest RestSharpRequest(string requestUri, 
@@ -276,8 +280,6 @@ namespace CRS_COMMON
             {
                 request.AddHeader("Cookie", cookie);
             }
-
-            request.Timeout = (int)TimeSpan.FromSeconds(30).TotalSeconds;
 
             return request;
         }
@@ -300,6 +302,24 @@ namespace CRS_COMMON
             }
         }
 
+        public T? RestSharpGetJson<T>(string baseUri,
+            string requestUri,
+            string contentType = "application/json",
+            ICredentials? credentials = null,
+            string? cookie = null)
+        {
+            var client = RestSharpClient(baseUri, credentials);
+
+            try
+            {
+                return client.GetJson<T>(requestUri);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<RestResponse> RestSharpGetAsync(string baseUri,
             string requestUri,
             string contentType = "application/json",
@@ -311,7 +331,25 @@ namespace CRS_COMMON
 
             try
             {
-                return await client.ExecuteAsync(request);
+                return await client.ExecuteAsync(request); 
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<T?> RestSharpGetJsonAsync<T>(string baseUri,
+            string requestUri,
+            string contentType = "application/json",
+            ICredentials? credentials = null,
+            string? cookie = null)
+        {
+            var client = RestSharpClient(baseUri, credentials);
+
+            try
+            {
+                return await client.GetJsonAsync<T>(requestUri); 
             }
             catch (Exception ex)
             {

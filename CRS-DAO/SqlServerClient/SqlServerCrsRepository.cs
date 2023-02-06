@@ -1,4 +1,5 @@
-﻿using CRS_MODELS;
+﻿using System.Data;
+using CRS_MODELS;
 using Dapper;
 using Microsoft.Data.SqlClient;
 
@@ -6,22 +7,26 @@ namespace CRS_DAO.SqlServerClient
 {
     public class SqlServerCrsRepository : ICrsRepository
     {
-        private readonly SqlConnection connection;
+        private SqlConnection connection;
+
+        private readonly string connectionString =
+            "Server=(LocalDb)\\MSSQLLocalDB; Database=CRS; Integrated Security=True";
 
         public SqlServerCrsRepository()
         {
-            connection = new SqlConnection(DbSettings.SQLServerConnectionString);
         }
-
         public Admin AddAdmin(Admin admin)
         {
             Admin? item = null;
-
+            connection = new SqlConnection(connectionString);
             try
             {
                 using (connection)
                 {
-                    connection.Open();
+                    if (connection == null || connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
 
                     // add admin
                     using (SqlCommand command = new SqlCommand(Constants.AddAdmin(admin), connection))
@@ -306,25 +311,131 @@ namespace CRS_DAO.SqlServerClient
             throw new NotImplementedException();
         }
 
-        public Users GetUser(int userId)
+        public Users? GetUser(int userId)
         {
-            throw new NotImplementedException();
-        }
-
-        public Users? GetUser(string userName, string password, int roleId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Users> GetUsers()
-        {
-            List<Users>? items = null;
+            Users? item = null;
+            connection = new SqlConnection(connectionString);
 
             try
             {
                 using (connection)
                 {
-                    connection.Open();
+                    if (connection == null || connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
+
+                    // get users
+                    using (SqlCommand command = new SqlCommand(Constants.GetUserById(userId), connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            var parser = reader.GetRowParser<Users>(typeof(Users));
+                            while (reader.Read())
+                            {
+                                item = parser(reader);
+                            }
+
+                            connection.Close();
+                            return item;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public Users? GetUser(string userName, string password, int roleId)
+        {
+            Users? item = null;
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                using (connection)
+                {
+                    if (connection == null || connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
+
+                    // get users
+                    using (SqlCommand command = new SqlCommand(Constants.GetUser(userName, password, roleId), connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            var parser = reader.GetRowParser<Users>(typeof(Users));
+                            while (reader.Read())
+                            {
+                                item = parser(reader);
+                            }
+
+                            connection.Close();
+                            return item;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public Users? GetLastUser()
+        {
+            Users? item = null;
+            connection = new SqlConnection(connectionString);
+
+            try
+            {
+                using (connection)
+                {
+                    if (connection == null || connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
+
+                    // get users
+                    using (SqlCommand command = new SqlCommand(Constants.GetLastUser(), connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            var parser = reader.GetRowParser<Users>(typeof(Users));
+                            while (reader.Read())
+                            {
+                                item = parser(reader);
+                            }
+
+                            connection.Close();
+                            return item;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public IEnumerable<Users> GetUsers()
+        {
+            var items = new List<Users>();
+            connection = new SqlConnection(connectionString);
+
+
+            try
+            {
+                using (connection)
+                {
+                    if (connection == null || connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
 
                     // get users
                     using (SqlCommand command = new SqlCommand(Constants.GetAllUsers(), connection))

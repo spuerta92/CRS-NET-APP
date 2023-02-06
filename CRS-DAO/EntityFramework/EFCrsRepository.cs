@@ -1146,5 +1146,10 @@ namespace CRS_DAO.EntityFramework
         {
             return db.RegisteredCourses.Where(x => x.StudentId == studentId).SingleOrDefault();
         }
+
+        public Users? GetLastUser()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

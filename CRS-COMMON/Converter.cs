@@ -7,14 +7,14 @@ using Newtonsoft.Json;
 
 namespace CRS_COMMON
 {
-    public class Converter
+    public static class Converter
     {
-        public string ObjectToJsonString(object entity)
+        public static string ObjectToJsonString(object entity)
         {
             return JsonConvert.SerializeObject(entity, Formatting.Indented);
         }
 
-        public T? JsonStringToObject<T>(string jsonString)
+        public static T? JsonStringToObject<T>(string jsonString)
         {
             return JsonConvert.DeserializeObject<T>(jsonString);
         }

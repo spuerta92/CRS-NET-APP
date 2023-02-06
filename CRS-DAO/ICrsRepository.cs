@@ -52,6 +52,12 @@ namespace CRS_DAO
         /// <returns></returns>
         public IEnumerable<Users> GetUsers();
 
+        /// <summary>
+        /// Gets the last user stored
+        /// </summary>
+        /// <returns></returns>
+        public Users? GetLastUser();
+
         // students
         public Students AddStudent(Students student);
         public void DeleteStudent(int studentId);

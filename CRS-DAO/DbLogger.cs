@@ -11,13 +11,11 @@ namespace CRS_DAO
     public class DbLogger
     {
         private readonly ICrsRepository repository;
-        private readonly Converter helpers;
 
         public DbLogger() {}
         public DbLogger(ICrsRepository repository)
         {
             this.repository = repository;
-            helpers = new Converter();
         }
 
         public void ApiError(string message)
@@ -32,7 +30,7 @@ namespace CRS_DAO
 
             var errorLog = new ApiErrorLog()
             {
-                Message = helpers.ObjectToJsonString(messageLog),
+                Message = Converter.ObjectToJsonString(messageLog),
                 Status = "Error",
                 CreateDateTime = DateTime.Now
             };
@@ -52,7 +50,7 @@ namespace CRS_DAO
 
             var errorLog = new DbErrorLog()
             {
-                Message = helpers.ObjectToJsonString(messageLog),
+                Message = Converter.ObjectToJsonString(messageLog),
                 Status = "Error",
                 CreateDateTime = DateTime.Now
             };
