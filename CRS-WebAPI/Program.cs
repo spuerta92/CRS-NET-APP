@@ -1,6 +1,9 @@
+using CRS_Authentication.BasicAuthentication.Settings;
 using CRS_DAO;
 using CRS_DAO.EntityFramework;
 using CRS_WebAPI;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
@@ -31,6 +34,15 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddAuthentication()
+    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", options => { });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("BasicAuthentication",
+        new AuthorizationPolicyBuilder("BasicAuthentication").RequireAuthenticatedUser().Build());
+});
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "CRS", Version = "v1" });
@@ -57,6 +69,8 @@ app.UseExceptionHandler("/error");
 app.UseHttpsRedirection();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

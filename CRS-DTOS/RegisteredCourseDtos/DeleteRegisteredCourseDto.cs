@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 
 namespace CRS_DTOS.RegisteredCourseDtos
 {
-    public class AddRegisteredCourse
+    public class DeleteRegisteredCourseDto
     {
         [Required]
         public int StudentId { get; set; }
+
         [Required]
         public int CourseId { get; set; }
+
         [JsonIgnore]
         public int RegistrationStatusId { get; set; }
-        [Required]
-        public string Grade { get; set; }
+
     }
 }

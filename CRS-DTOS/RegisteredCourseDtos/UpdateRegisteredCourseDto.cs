@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRS_DTOS.RegisteredCourseDtos
 {
-    public class UpdateRegisteredCourse
+    public class UpdateRegisteredCourseDto
     {
         [Required]
         public int StudentId { get; set; }
@@ -18,8 +18,5 @@ namespace CRS_DTOS.RegisteredCourseDtos
 
         [JsonIgnore]
         public int RegistrationStatusId { get; set; }
-
-        [Required]
-        public string Grade { get; set; }
     }
 }

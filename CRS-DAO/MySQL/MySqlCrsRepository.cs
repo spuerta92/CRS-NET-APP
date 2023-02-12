@@ -472,5 +472,25 @@ namespace CRS_DAO.MySQL
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<Grades> ViewGrades(int studentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Courses> GetStudentCourses(int studentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Courses> GetStudentRegisteredCourses(int studentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Courses> GetRegisteredCoursesOnlyCourses()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -206,19 +206,19 @@ namespace CRS_WebAPI.Controllers
             }
             catch (BadHttpRequestException ex)
             {
-                logger.LogError($"Failure in AddCourse Controller Action: {ex}");
+                logger.LogError($"Failure in UpdateCourse Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode(ex.StatusCode, "Bad Request");
             }
             catch (HttpRequestException ex)
             {
-                logger.LogError($"Failure in AddCourse Controller Action: {ex}");
+                logger.LogError($"Failure in UpdateCourse Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode((int)ex.StatusCode, "Bad Request");
             }
             catch (Exception ex)
             {
-                logger.LogError($"Failure in AddCourse Controller Action: {ex}");
+                logger.LogError($"Failure in UpdateCourse Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return Problem(ex.Message);
             }
@@ -244,19 +244,49 @@ namespace CRS_WebAPI.Controllers
             }
             catch (BadHttpRequestException ex)
             {
-                logger.LogError($"Failure in AddCourse Controller Action: {ex}");
+                logger.LogError($"Failure in DeleteCourse Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode(ex.StatusCode, "Bad Request");
             }
             catch (HttpRequestException ex)
             {
-                logger.LogError($"Failure in AddCourse Controller Action: {ex}");
+                logger.LogError($"Failure in DeleteCourse Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode((int)ex.StatusCode, "Bad Request");
             }
             catch (Exception ex)
             {
-                logger.LogError($"Failure in AddCourse Controller Action: {ex}");
+                logger.LogError($"Failure in DeleteCourse Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return StatusCode(500, "Internal Server Error");
+            }
+
+            return NoContent();
+        }
+
+        [HttpGet("[action]")]
+        public ActionResult<IEnumerable<CourseDto>> GetRegisteredCourses()
+        {
+            logger.LogInformation("From GetRegisteredCourses action controller");
+            try
+            {
+                return courseBLL.GetRegisteredCourses().Select(course => course.AsDto()).ToList();
+            }
+            catch (BadHttpRequestException ex)
+            {
+                logger.LogError($"Failure in GetRegisteredCourses Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return StatusCode(ex.StatusCode, "Bad Request");
+            }
+            catch (HttpRequestException ex)
+            {
+                logger.LogError($"Failure in GetRegisteredCourses Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return StatusCode((int)ex.StatusCode, "Bad Request");
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Failure in GetRegisteredCourses Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode(500, "Internal Server Error");
             }

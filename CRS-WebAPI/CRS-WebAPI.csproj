@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CRS-AUTHENTICATION\CRS-AUTHENTICATION.csproj" />
     <ProjectReference Include="..\CRS-BUSINESS\CRS-BUSINESS.csproj" />
     <ProjectReference Include="..\CRS-COMMON\CRS-COMMON.csproj" />
     <ProjectReference Include="..\CRS-DAO\CRS-DAO.csproj" />

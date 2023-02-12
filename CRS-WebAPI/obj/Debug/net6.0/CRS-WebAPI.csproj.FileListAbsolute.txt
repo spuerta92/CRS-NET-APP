@@ -115,3 +115,7 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\refint\CR
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\CRS-WebAPI.genruntimeconfig.cache
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\obj\Debug\net6.0\ref\CRS-WebAPI.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-AUTHENTICATION.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-WebAPI\bin\Debug\net6.0\CRS-AUTHENTICATION.pdb

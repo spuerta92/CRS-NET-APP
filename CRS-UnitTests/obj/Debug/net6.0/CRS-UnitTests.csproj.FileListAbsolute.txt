@@ -197,3 +197,7 @@ C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-UnitTests\bin\Debug\net6.0\CRS-CO
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-UnitTests\bin\Debug\net6.0\CRS-DTOS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-UnitTests\bin\Debug\net6.0\CRS-EXCEPTIONS.pdb
 C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-UnitTests\bin\Debug\net6.0\CRS-MODELS.pdb
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-UnitTests\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-UnitTests\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-UnitTests\bin\Debug\net6.0\CRS-AUTHENTICATION.dll
+C:\dotnet-workspace\CRS-DOTNETCORE-PROJECT\CRS-UnitTests\bin\Debug\net6.0\CRS-AUTHENTICATION.pdb

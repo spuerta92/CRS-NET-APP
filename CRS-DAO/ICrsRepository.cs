@@ -70,6 +70,24 @@ namespace CRS_DAO
         /// <returns></returns>
         public Students? GetStudentByUserId(int userId);
         public IEnumerable<Students> GetStudents();
+        /// <summary>
+        /// Get grades for a specific student
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
+        public IEnumerable<Grades> ViewGrades(int studentId);
+        /// <summary>
+        /// Gets a list of courses a specific student is enrolled for
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
+        public IEnumerable<Courses> GetStudentCourses(int studentId);
+        /// <summary>
+        /// Gets a list of registered courses for a specific student 
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
+        public IEnumerable<Courses> GetStudentRegisteredCourses(int studentId);
 
         // professors
         public Professors AddProfessor(Professors professor);
@@ -98,6 +116,7 @@ namespace CRS_DAO
         public Courses UpdateCourse(Courses course);
         public Courses? GetCourse(int courseId);
         public IEnumerable<Courses> GetCourses();
+        public IEnumerable<Courses> GetRegisteredCoursesOnlyCourses();
 
         // departments
         public Departments AddDepartment(Departments deparment);

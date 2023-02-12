@@ -14,8 +14,8 @@ namespace CRS_MODELS
         public int StudentId { get; set; }
         public int CourseId { get; set; }
         public int RegistrationStatusId { get; set; }
-        public string Grade { get; set; }
-        public string UUID { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public string? Grade { get; set; }
+        public string? UUID { get; set; }
+        public DateTime? CreateDateTime { get; set; }
     }
 }

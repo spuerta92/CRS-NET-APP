@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRS_DAO.EntityFramework
 {
@@ -208,6 +209,42 @@ namespace CRS_DAO.EntityFramework
 
             var result = db.PaymentMethods.Where(x => x.PaymentMethodId == paymentMethod.PaymentMethodId).SingleOrDefault();
             return result;
+        }
+
+        public IEnumerable<Courses> GetStudentRegisteredCourses(int studentId)
+        {
+            try
+            {
+                var studentCourses =
+                    (from r in db.RegisteredCourses
+                        join c in db.Courses
+                            on r.CourseId equals c.CourseId
+                        where r.StudentId == studentId && r.RegistrationStatusId == 1
+                        select new
+                        {
+                            r.CourseId,
+                            c.CourseName,
+                            c.Description
+                        });
+
+                var courses = new List<Courses>();
+                foreach (var sc in studentCourses)
+                {
+                    courses.Add(new Courses()
+                    {
+                        CourseId = sc.CourseId,
+                        CourseName = sc.CourseName,
+                        Description = sc.Description
+                    });
+                }
+
+                return courses;
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
         }
 
         public Professors AddProfessor(Professors professor)
@@ -1149,7 +1186,129 @@ namespace CRS_DAO.EntityFramework
 
         public Users? GetLastUser()
         {
-            throw new NotImplementedException();
+            try
+            {
+                var users = from s in db.Users select s;
+                var lastStudent = users.OrderByDescending(x => x.UserId).SingleOrDefault();
+                return lastStudent;
+
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public IEnumerable<Grades> ViewGrades(int studentId)
+        {
+            try
+            {
+                var studentGrades =
+                    (from r in db.RegisteredCourses
+                     join c in db.Courses
+                         on r.CourseId equals c.CourseId
+                     where r.StudentId == studentId
+                     select new
+                     {
+                         r.CourseId,
+                         c.CourseName,
+                         r.Grade
+                     });
+
+                var grades = new List<Grades>();
+                foreach (var sg in studentGrades)
+                {
+                    grades.Add(new Grades()
+                    {
+                        Grade = sg.Grade,
+                        Course = new Courses()
+                        {
+                            CourseId = sg.CourseId,
+                            CourseName = sg.CourseName
+                        }
+                    });
+                }
+
+                return grades;
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public IEnumerable<Courses> GetStudentCourses(int studentId)
+        {
+            try
+            {
+                var studentCourses =
+                    (from r in db.RegisteredCourses
+                        join c in db.Courses
+                            on r.CourseId equals c.CourseId
+                        where r.StudentId == studentId
+                        select new
+                        {
+                            r.CourseId,
+                            c.CourseName,
+                            c.Description
+                        });
+
+                var courses = new List<Courses>();
+                foreach (var sc in studentCourses)
+                {
+                    courses.Add(new Courses()
+                    {
+                        CourseId = sc.CourseId,
+                        CourseName = sc.CourseName,
+                        Description = sc.Description
+                    });
+                }
+
+                return courses;
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public IEnumerable<Courses> GetRegisteredCoursesOnlyCourses()
+        {
+            try
+            {
+                var studentCourses =
+                    (from r in db.RegisteredCourses
+                        join c in db.Courses
+                            on r.CourseId equals c.CourseId
+                     where r.RegistrationStatusId == 1
+                        select new
+                        {
+                            r.CourseId,
+                            c.CourseName,
+                            c.Description
+                        });
+
+                var courses = new List<Courses>();
+                foreach (var sc in studentCourses)
+                {
+                    courses.Add(new Courses()
+                    {
+                        CourseId = sc.CourseId,
+                        CourseName = sc.CourseName,
+                        Description = sc.Description
+                    });
+                }
+
+                return courses;
+            }
+            catch (SqlException ex)
+            {
+                //log.DbError(ex.Message);
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

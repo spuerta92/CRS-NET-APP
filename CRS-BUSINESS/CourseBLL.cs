@@ -48,5 +48,18 @@ namespace CRS_BUSINESS
         {
             repository.DeleteCourse(courseId);
         }
+
+        public IEnumerable<Courses> GetRegisteredCourses()
+        {
+            try
+            {
+                return repository.GetRegisteredCoursesOnlyCourses();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
     }
 }
