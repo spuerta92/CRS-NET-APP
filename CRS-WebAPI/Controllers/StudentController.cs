@@ -2,6 +2,7 @@
 using CRS_BUSINESS;
 using CRS_COMMON;
 using CRS_DAO;
+using CRS_DTOS.PaymentDtos;
 using CRS_DTOS.RegisteredCourseDtos;
 using CRS_DTOS.StudentDtos;
 using Microsoft.AspNetCore.Mvc;
@@ -324,7 +325,7 @@ namespace CRS_WebAPI.Controllers
         [HttpPut("[action]")]
         public ActionResult UnregisterForCourse([FromBody] UpdateRegisteredCourseDto registerCourseDto)
         {
-            logger.LogInformation("From RegisterCourse action controller");
+            logger.LogInformation("From UnregisterForCourse action controller");
             try
             {
                 if (registerCourseDto == null)
@@ -336,28 +337,28 @@ namespace CRS_WebAPI.Controllers
                 {
                     StudentId = registerCourseDto.StudentId,
                     CourseId = registerCourseDto.CourseId,
-                    RegistrationStatusId = 0
+                    RegistrationStatusId = 2
                 };
 
-                var courseRegistration = studentBLL.RegisterForCourse(registerCourse);
+                var courseRegistration = studentBLL.UnregisterForCourse(registerCourse);
                 return Ok(courseRegistration);
 
             }
             catch (BadHttpRequestException ex)
             {
-                logger.LogError($"Failure in RegisterForCourse Controller Action: {ex}");
+                logger.LogError($"Failure in UnregisterForCourse Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode(ex.StatusCode, "Bad Request");
             }
             catch (HttpRequestException ex)
             {
-                logger.LogError($"Failure in RegisterForCourse Controller Action: {ex}");
+                logger.LogError($"Failure in UnregisterForCourse Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode((int)ex.StatusCode, "Bad Request");
             }
             catch (Exception ex)
             {
-                logger.LogError($"Failure in RegisterForCourse Controller Action: {ex}");
+                logger.LogError($"Failure in UnregisterForCourse Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return Problem(ex.Message);
             }
@@ -371,7 +372,7 @@ namespace CRS_WebAPI.Controllers
         [HttpPost("[action]")]
         public ActionResult AddCourse([FromBody] AddRegisteredCourseDto registerCourseDto)
         {
-            logger.LogInformation("From RegisterCourse action controller");
+            logger.LogInformation("From AddCourse action controller");
             try
             {
                 if (registerCourseDto == null)
@@ -383,7 +384,7 @@ namespace CRS_WebAPI.Controllers
                 {
                     StudentId = registerCourseDto.StudentId,
                     CourseId = registerCourseDto.CourseId,
-                    RegistrationStatusId = 0,
+                    RegistrationStatusId = 2,
                     Grade = null,
                     UUID = Guid.NewGuid().ToString(),
                     CreateDateTime = DateTime.Now
@@ -421,7 +422,7 @@ namespace CRS_WebAPI.Controllers
         [HttpDelete("[action]")]
         public ActionResult DropCourse([FromBody] DeleteRegisteredCourseDto registerCourseDto)
         {
-            logger.LogInformation("From RegisterCourse action controller");
+            logger.LogInformation("From DropCourse action controller");
             try
             {
                 if (registerCourseDto == null)
@@ -459,6 +460,11 @@ namespace CRS_WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// View grades 
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
         [HttpGet("[action]/{studentId}")]
         public ActionResult<List<Grades>> ViewGrades(int studentId)
         {
@@ -493,6 +499,11 @@ namespace CRS_WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Get all courses for a specific student
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
         [HttpGet("[action]/{studentId}")]
         public ActionResult<List<Courses>> GetStudentCourses(int studentId)
         {
@@ -527,6 +538,11 @@ namespace CRS_WebAPI.Controllers
             }
         }
 
+        /// <summary>
+        /// Get all registered courses for a specific student
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <returns></returns>
         [HttpGet("[action]/{studentId}")]
         public ActionResult<List<Courses>> GetStudentRegisteredCourses(int studentId)
         {
@@ -556,6 +572,57 @@ namespace CRS_WebAPI.Controllers
             catch (Exception ex)
             {
                 logger.LogError($"Failure in GetStudentRegisteredCourses Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return Problem(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Make a payment for registered courses
+        /// </summary>
+        /// <param name="paymentDto"></param>
+        /// <returns></returns>
+        [HttpPut("[action]")]
+        public ActionResult Payment([FromBody]UpdatePaymentDto paymentDto)
+        {
+            logger.LogInformation("From Payment action controller");
+            try
+            {
+                if (paymentDto == null)
+                {
+                    return NotFound();
+                }
+
+                var payment = new Payment()
+                {
+                    PaymentAmount = paymentDto.PaymentAmount,
+                    StudentId = paymentDto.StudentId,
+                    DueDate = paymentDto.DueDate,
+                    Semester = paymentDto.Semester,
+                    PaymentMethodId = paymentDto.PaymentMethodId,
+                    IsPaid = 1
+                };
+
+                studentBLL.Payment(payment);
+
+                return NoContent();
+
+            }
+            catch (BadHttpRequestException ex)
+            {
+                logger.LogError($"Failure in Payment Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return StatusCode(ex.StatusCode, "Bad Request");
+            }
+            catch (HttpRequestException ex)
+            {
+                logger.LogError($"Failure in Payment Controller Action: {ex}");
+                //log.ApiError(ex.Message);
+                return StatusCode((int)ex.StatusCode, "Bad Request");
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"Failure in Payment Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return Problem(ex.Message);
             }

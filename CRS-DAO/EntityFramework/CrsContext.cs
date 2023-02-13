@@ -17,7 +17,7 @@ namespace CRS_DAO.EntityFramework
         public DbSet<Professors> Professors { get; set; }
         public DbSet<Admin> Admin { get; set; }
         public DbSet<Courses> Courses { get; set; }
-        public DbSet<CourseCatalogs> CourseCatalog { get; set; }
+        public DbSet<CourseCatalog> CourseCatalog { get; set; }
         public DbSet<Departments> Departments { get; set; }
         public DbSet<Majors> Majors { get; set; }
         public DbSet<Payment> Payment { get; set; }

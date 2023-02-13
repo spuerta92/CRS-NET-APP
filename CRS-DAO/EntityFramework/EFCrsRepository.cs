@@ -67,7 +67,7 @@ namespace CRS_DAO.EntityFramework
             return result;
         }
 
-        public CourseCatalogs AddCourseToCourseCatalog(CourseCatalogs course)
+        public CourseCatalog AddCourseToCourseCatalog(CourseCatalog course)
         {
             try
             {
@@ -744,7 +744,7 @@ namespace CRS_DAO.EntityFramework
             return db.Admin;
         }
 
-        public IEnumerable<CourseCatalogs> GetAllCoursesFromCourseCatalog()
+        public IEnumerable<CourseCatalog> GetAllCoursesFromCourseCatalog()
         {
             return db.CourseCatalog;
         }
@@ -754,7 +754,7 @@ namespace CRS_DAO.EntityFramework
             return db.Courses.Where(x => x.CourseId == courseId).SingleOrDefault();
         }
 
-        public CourseCatalogs? GetCourseFromCourseCatalog(int courseId)
+        public CourseCatalog? GetCourseFromCourseCatalog(int courseId)
         {
             return db.CourseCatalog.Where(x => x.CourseId == courseId).SingleOrDefault();
         }
@@ -784,9 +784,9 @@ namespace CRS_DAO.EntityFramework
             return db.Majors;
         }
 
-        public Payment? GetPayment(int paymentId)
+        public Payment? GetPayment(int studentId)
         {
-            return db.Payment.Where(x => x.PaymentId == paymentId).SingleOrDefault();
+            return db.Payment.Where(x => x.StudentId == studentId).SingleOrDefault();
         }
 
         public PaymentMethods? GetPaymentMethod(int paymentMethodId)
@@ -939,12 +939,12 @@ namespace CRS_DAO.EntityFramework
             return db.Courses.Where(x => x.CourseId == course.CourseId).SingleOrDefault();
         }
 
-        public CourseCatalogs UpdateCourseInCourseCatalog(CourseCatalogs course)
+        public CourseCatalog UpdateCourseInCourseCatalog(CourseCatalog course)
         {
             try
             {
                 var existingCourseCatalogItem = db.CourseCatalog.Where(x => x.CourseId == course.CourseId).SingleOrDefault();
-                db.Entry<CourseCatalogs>(existingCourseCatalogItem).CurrentValues.SetValues(course);
+                db.Entry<CourseCatalog>(existingCourseCatalogItem).CurrentValues.SetValues(course);
                 db.SaveChanges();
             }
             catch (SqlException ex)
@@ -994,7 +994,7 @@ namespace CRS_DAO.EntityFramework
         {
             try
             {
-                var existingPayment = db.Payment.Where(x => x.PaymentId == payment.PaymentId).SingleOrDefault();
+                var existingPayment = db.Payment.Where(x => x.StudentId == payment.StudentId).SingleOrDefault();
                 db.Entry<Payment>(existingPayment).CurrentValues.SetValues(payment);
                 db.SaveChanges();
             }
@@ -1116,7 +1116,7 @@ namespace CRS_DAO.EntityFramework
         {
             try
             {
-                var existingSemesterRegistration = db.SemesterRegistration.Where(x => x.RegistrationId == semesterRegistration.RegistrationId).SingleOrDefault();
+                var existingSemesterRegistration = db.SemesterRegistration.Where(x => x.StudentId == semesterRegistration.StudentId).SingleOrDefault();
                 db.Entry<SemesterRegistration>(existingSemesterRegistration).CurrentValues.SetValues(semesterRegistration);
                 db.SaveChanges();
             }

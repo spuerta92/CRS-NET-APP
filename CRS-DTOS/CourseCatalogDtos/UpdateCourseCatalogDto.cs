@@ -16,7 +16,7 @@ namespace CRS_DTOS.CourseCatalogDtos
         [Required]
         public int DepartmentId { get; set; }
         [Required]
-        public string Prerequisite { get; set; }
+        public string? Prerequisite { get; set; }
         [Required]
         public int Credits { get; set; }
         [Required]

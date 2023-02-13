@@ -24,8 +24,8 @@ namespace CRS_WebAPI.Controllers
             this.logger = logger;
             this.repository = repository;
 
-            professorBLL = new ProfessorBLL(repository);
-            log = new DbLogger(repository);
+            professorBLL = new ProfessorBLL(this.repository);
+            log = new DbLogger(this.repository);
         }
 
         [HttpGet("[action]")]
@@ -191,19 +191,19 @@ namespace CRS_WebAPI.Controllers
             }
             catch (BadHttpRequestException ex)
             {
-                logger.LogError($"Failure in AddProfessor Controller Action: {ex}");
+                logger.LogError($"Failure in UpdateProfessor Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode(ex.StatusCode, "Bad Request");
             }
             catch (HttpRequestException ex)
             {
-                logger.LogError($"Failure in AddProfessor Controller Action: {ex}");
+                logger.LogError($"Failure in UpdateProfessor Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode((int)ex.StatusCode, "Bad Request");
             }
             catch (Exception ex)
             {
-                logger.LogError($"Failure in AddProfessor Controller Action: {ex}");
+                logger.LogError($"Failure in UpdateProfessor Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode(500, "Internal Server Error");
             }
@@ -224,19 +224,19 @@ namespace CRS_WebAPI.Controllers
             }
             catch (BadHttpRequestException ex)
             {
-                logger.LogError($"Failure in AddProfessor Controller Action: {ex}");
+                logger.LogError($"Failure in DeleteProfessor Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode(ex.StatusCode, "Bad Request");
             }
             catch (HttpRequestException ex)
             {
-                logger.LogError($"Failure in AddProfessor Controller Action: {ex}");
+                logger.LogError($"Failure in DeleteProfessor Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode((int)ex.StatusCode, "Bad Request");
             }
             catch (Exception ex)
             {
-                logger.LogError($"Failure in AddProfessor Controller Action: {ex}");
+                logger.LogError($"Failure in DeleteProfessor Controller Action: {ex}");
                 //log.ApiError(ex.Message);
                 return StatusCode(500, "Internal Server Error");
             }

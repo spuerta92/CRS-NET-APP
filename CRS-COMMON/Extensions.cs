@@ -29,6 +29,7 @@ namespace CRS_COMMON
                 Email = admin.Email,
                 Address = admin.Address,
                 Phone = admin.Phone,
+                UserId = admin.UserId,
                 UUID = admin.UUID,
                 CreateDateTime = admin.CreateDateTime
             };
@@ -91,7 +92,7 @@ namespace CRS_COMMON
             };
         }
 
-        public static CourseCatalogDto AsDto(this CourseCatalogs courseCatalog)
+        public static CourseCatalogDto AsDto(this CourseCatalog courseCatalog)
         {
             return new CourseCatalogDto()
             {
@@ -114,7 +115,7 @@ namespace CRS_COMMON
             return new PaymentDto()
             {
                 PaymentId = payment.PaymentId,
-                PaymentName = payment.PaymentName,
+                PaymentAmount = payment.PaymentAmount,
                 StudentId = payment.StudentId,
                 DueDate = payment.DueDate,
                 Semester = payment.Semester,

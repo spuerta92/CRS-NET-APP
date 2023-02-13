@@ -104,11 +104,11 @@ namespace CRS_DAO
         public IEnumerable<Admin> GetAdmins();
 
         // course catalog
-        public CourseCatalogs AddCourseToCourseCatalog(CourseCatalogs course);
+        public CourseCatalog AddCourseToCourseCatalog(CourseCatalog course);
         public void DeleteCourseFromCourseCatalog(int courseId);
-        public CourseCatalogs UpdateCourseInCourseCatalog(CourseCatalogs course);
-        public CourseCatalogs? GetCourseFromCourseCatalog(int courseId);
-        public IEnumerable<CourseCatalogs> GetAllCoursesFromCourseCatalog();
+        public CourseCatalog UpdateCourseInCourseCatalog(CourseCatalog course);
+        public CourseCatalog? GetCourseFromCourseCatalog(int courseId);
+        public IEnumerable<CourseCatalog> GetAllCoursesFromCourseCatalog();
 
         // courses
         public Courses AddCourse(Courses course);
@@ -136,7 +136,7 @@ namespace CRS_DAO
         public Payment AddPayment(Payment payment);
         public void DeletePayment(int paymentId);
         public Payment UpdatePayment(Payment payment);
-        public Payment? GetPayment(int paymentId);
+        public Payment? GetPayment(int studentId);
         public IEnumerable<Payment> GetPayments();
 
         // payment methods

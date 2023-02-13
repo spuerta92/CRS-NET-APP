@@ -156,22 +156,15 @@ namespace CRS_BUSINESS
                 }
 
                 // update registration
+                course.RegisteredCourseId = studentCourseRegistration.RegisteredCourseId;
+                course.Grade = studentCourseRegistration.Grade;
+                course.UUID = studentCourseRegistration.UUID;
+                course.CreateDateTime = studentCourseRegistration.CreateDateTime;
                 var courseRegistration = repository.UpdateRegisteredCourse(course);
 
                 // update course catalog
-                if (courseRegistration.RegistrationStatusId == 1)
-                {
-                    courseCatalog.Enrolled++;
-                    repository.UpdateCourseInCourseCatalog(courseCatalog);
-                }
-                else
-                {
-                    if (courseCatalog.Enrolled > 0)
-                    {
-                        courseCatalog.Enrolled--;
-                        repository.UpdateCourseInCourseCatalog(courseCatalog);
-                    }
-                }
+                courseCatalog.Enrolled++;
+                repository.UpdateCourseInCourseCatalog(courseCatalog);
 
                 return courseRegistration;
             }
@@ -222,21 +215,17 @@ namespace CRS_BUSINESS
                 }
 
                 // update registration
+                course.RegisteredCourseId = studentCourseRegistration.RegisteredCourseId;
+                course.Grade = studentCourseRegistration.Grade;
+                course.UUID = studentCourseRegistration.UUID;
+                course.CreateDateTime = studentCourseRegistration.CreateDateTime;
                 var courseRegistration = repository.UpdateRegisteredCourse(course);
 
                 // update course catalog
-                if (courseRegistration.RegistrationStatusId == 1)
+                if (courseCatalog.Enrolled > 0)
                 {
-                    courseCatalog.Enrolled++;
+                    courseCatalog.Enrolled--;
                     repository.UpdateCourseInCourseCatalog(courseCatalog);
-                }
-                else
-                {
-                    if (courseCatalog.Enrolled > 0)
-                    {
-                        courseCatalog.Enrolled--;
-                        repository.UpdateCourseInCourseCatalog(courseCatalog);
-                    }
                 }
 
                 return courseRegistration;
@@ -400,6 +389,48 @@ namespace CRS_BUSINESS
                 }
 
                 return repository.GetStudentRegisteredCourses(studentId);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void Payment(Payment payment)
+        {
+            logger.LogInformation("From student ViewGrades service method");
+            try
+            {
+                // check student semester registration
+                var semesterRegistration = repository.GetSemesterRegistrationByStudentId(payment.StudentId);
+                if (semesterRegistration == null)
+                {
+                    throw new StudentNotRegisteredException(
+                        $"Student has not registered for the semester");
+                }
+
+                // check if student is already registered for course
+                var studentCourseRegistration = repository.GetRegisteredCourseByStudentId(payment.StudentId);
+                if (studentCourseRegistration == null)
+                {
+                    throw new StudentCourseNotFoundException("Student course not found");
+                }
+
+                // check if there's a bill has already been created
+                var bill = repository.GetPayment(payment.StudentId);
+                if (bill == null)
+                {
+                    throw new PaymentRecordNotFoundException("Payment record does not exist or has not been created yet");
+                }
+
+                // check if bill has already been paid
+                if (bill.IsPaid == 1)
+                {
+                    throw new DuplicatePaymentException("Payment has already been made");
+                }
+
+
+                repository.UpdatePayment(payment);
             }
             catch (Exception ex)
             {

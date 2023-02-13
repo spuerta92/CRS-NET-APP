@@ -15,7 +15,6 @@ namespace CRS_DTOS.SemesterRegistrationDtos
         public int ApprovalStatus { get; set; }
         [Required]
         public int AdminId { get; set; }
-        [Required]
         public string Comment { get; set; }
     }
 }

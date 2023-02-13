@@ -63,7 +63,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public CourseCatalogs AddCourseToCourseCatalog(CourseCatalogs course)
+        public CourseCatalog AddCourseToCourseCatalog(CourseCatalog course)
         {
             throw new NotImplementedException();
         }
@@ -193,7 +193,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public IEnumerable<CourseCatalogs> GetAllCoursesFromCourseCatalog()
+        public IEnumerable<CourseCatalog> GetAllCoursesFromCourseCatalog()
         {
             throw new NotImplementedException();
         }
@@ -203,7 +203,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public CourseCatalogs GetCourseFromCourseCatalog(int courseId)
+        public CourseCatalog GetCourseFromCourseCatalog(int courseId)
         {
             throw new NotImplementedException();
         }
@@ -338,7 +338,7 @@ namespace CRS_DAO.MySQL
             throw new NotImplementedException();
         }
 
-        public CourseCatalogs UpdateCourseInCourseCatalog(CourseCatalogs course)
+        public CourseCatalog UpdateCourseInCourseCatalog(CourseCatalog course)
         {
             throw new NotImplementedException();
         }

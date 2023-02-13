@@ -16,7 +16,7 @@ namespace CRS_MODELS
         public string Phone { get; set; }
         public string Address { get; set; }
         public int UserId { get; set; }
-        public string UUID { get; set; }
-        public DateTime CreateDateTime { get; set; }
+        public string? UUID { get; set; }
+        public DateTime? CreateDateTime { get; set; }
     }
 }

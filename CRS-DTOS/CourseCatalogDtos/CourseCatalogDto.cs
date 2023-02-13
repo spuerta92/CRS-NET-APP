@@ -12,10 +12,10 @@ namespace CRS_DTOS.CourseCatalogDtos
         public int CourseId { get; set; }
         public int ProfessorId { get; set; }
         public int DepartmentId { get; set; }
-        public string Prerequisite { get; set; }
+        public string? Prerequisite { get; set; }
         public int Credits { get; set; }
         public int Capacity { get; set; }
-        public int Enrolled { get; set; }
+        public int? Enrolled { get; set; }
         public string Semester { get; set; }
         public string? UUID { get; set; }
         public DateTime? CreateDateTime { get; set; }

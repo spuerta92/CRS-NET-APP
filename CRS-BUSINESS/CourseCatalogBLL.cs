@@ -20,25 +20,25 @@ namespace CRS_BUSINESS
             this.logger = logger;
         }
 
-        public IEnumerable<CourseCatalogs> GetAllCoursesFromCourseCatalog()
+        public IEnumerable<CourseCatalog> GetAllCoursesFromCourseCatalog()
         {
             var courses = repository.GetAllCoursesFromCourseCatalog();
             return courses;
         }
 
-        public CourseCatalogs GetCourseFromCourseCatalog(int courseId)
+        public CourseCatalog GetCourseFromCourseCatalog(int courseId)
         {
             var course = repository.GetCourseFromCourseCatalog(courseId);
             return course;
         }
 
-        public CourseCatalogs AddCourseToCourseCatalog(CourseCatalogs course)
+        public CourseCatalog AddCourseToCourseCatalog(CourseCatalog course)
         {
             var newCourse = repository.AddCourseToCourseCatalog(course);
             return newCourse;
         }
 
-        public CourseCatalogs UpdateCourseInCourseCatalog(CourseCatalogs course)
+        public CourseCatalog UpdateCourseInCourseCatalog(CourseCatalog course)
         {
             var existingCourse = repository.UpdateCourseInCourseCatalog(course);
             return existingCourse;

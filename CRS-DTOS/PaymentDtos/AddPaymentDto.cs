@@ -10,7 +10,7 @@ namespace CRS_DTOS.PaymentDtos
     public class AddPaymentDto
     {
         [Required]
-        public string PaymentName { get; set; }
+        public string PaymentAmount { get; set; }
         [Required]
         public int StudentId { get; set; }
         [Required]
@@ -19,7 +19,5 @@ namespace CRS_DTOS.PaymentDtos
         public string Semester { get; set; }
         [Required]
         public int PaymentMethodId { get; set; }
-        [Required]
-        public byte IsPaid { get; set; }
     }
 }

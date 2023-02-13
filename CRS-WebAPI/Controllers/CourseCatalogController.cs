@@ -131,7 +131,7 @@ namespace CRS_WebAPI.Controllers
                 }
 
                 // add new courseCatalog
-                var courseCatalog = new CourseCatalogs()
+                var courseCatalog = new CourseCatalog()
                 {
                     CourseId = courseCatalogDto.CourseId,
                     ProfessorId = courseCatalogDto.ProfessorId,
@@ -198,7 +198,7 @@ namespace CRS_WebAPI.Controllers
                 }
 
                 // update courseCatalog
-                var courseCatalog = new CourseCatalogs()
+                var courseCatalog = new CourseCatalog()
                 {
                     CourseId = courseCatalogDto.CourseId,
                     ProfessorId = courseCatalogDto.ProfessorId,
